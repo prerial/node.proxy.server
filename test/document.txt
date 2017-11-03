@@ -1,0 +1,2 @@
+chrome://net-internals/#sockets
+
