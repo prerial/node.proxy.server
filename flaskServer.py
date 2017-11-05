@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import Request
-from flask import Response
+from flask import Response, make_response
 
 
 app = Flask(__name__)
@@ -10,16 +10,24 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
+@app.route('/dmc/v1.0/schemas/schema_id1',  methods=['GET', 'POST'])
+def json_post():
+    if Request.method == 'POST':
+        dummy = Request.form
+    resp = Response('{"test": "ok"}')
+    resp.headers['Content-Type'] = "application/json"
+    return resp
+
 @app.route('/app1/*/app1/*')
 def appl1():
     resp = Response('Hello World!')
     #    resp = make_response()
-    resp.headers['Access-Control-Allow-Origin'] = '*'
+#    resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
 @app.route('/app2/*/app2/*')
 def appl2():
-    resp = Response('{"status": "success","message": "",  "payload": ['
+    resp = Response('{"status": "AAAA","message": "",  "payload": ['
                     '{ "name": "Employees", "columns": ['
                     '{"name": "EmployeeID","type": "int","size": 11,"primaryKey": "true","required": "true"}]]}')
     #    resp = make_response()
@@ -50,7 +58,7 @@ def schema_id():
                     '{ "name": "Employees", "columns": ['
                     '{"name": "EmployeeID","type": "int","size": 11,"primaryKey": "true","required": "true"}]}]}')
 #    resp = make_response()
-    resp.headers['Access-Control-Allow-Origin'] = '*'
+#    resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
 #    return '{"status": "success","message": "",  "payload": [' \

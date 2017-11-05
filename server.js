@@ -27,6 +27,10 @@ app.all("/dmc/v1.0/schemas/schema_id", function(req, res) {
     console.log('redirecting to APP3');
     apiProxy.web(req, res, {target: onemoreAPI});
 });
+app.all("/dmc/v1.0/schemas/schema_id1", function(req, res) {
+    console.log('redirecting to APP5');
+    apiProxy.web(req, res, {target: onemoreAPI});
+});
 
 app.listen(3000, function(){
     console.log('Server started on 3000');
