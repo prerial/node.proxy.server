@@ -8,16 +8,16 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 
-def get_all_users(json_str=False):
+def get_all_users(str, json_str=False):
     conn = sqlite3.connect(app.config['DATABASE'])
     conn.row_factory = sqlite3.Row
     db = conn.cursor()
-    rows = db.execute("""SELECT * from posts""").fetchall()
+    rows = db.execute(str).fetchall()
     conn.commit()
     conn.close()
-    print json.dumps( [dict(ix) for ix in rows] ) #CREATE JSON
+    return json.dumps( [dict(ix) for ix in rows] ) #CREATE JSON
 
 if __name__ == '__main__':
-    get_all_users()
+    print get_all_users("""SELECT * from posts""")
     app.run(debug=True)
 
