@@ -1,0 +1,206 @@
+{
+  "status": "success",
+  "message": "",
+  "payload": {
+    "erddata": [
+      {
+        "name": "Employees",
+        "columns": [
+          {
+            "name": "EmployeeID",
+            "type": "int",
+            "size": 11,
+            "primaryKey": "true",
+            "required": "true"
+          },
+          {
+            "name": "LastName",
+            "type": "varchar",
+            "size": 20
+          },
+          {
+            "name": "FirstName",
+            "type": "varchar",
+            "size": 10
+          },
+          {
+            "name": "Title",
+            "type": "varchar",
+            "size": 30
+          },
+          {
+            "name": "TitleOfCourtesy",
+            "type": "varchar",
+            "size": 25
+          },
+          {
+            "name": "BirthDate",
+            "type": "datetime"
+          },
+          {
+            "name": "HireDate",
+            "type": "datetime"
+          },
+          {
+            "name": "Address",
+            "type": "varchar",
+            "size": 60
+          },
+          {
+            "name": "City",
+            "type": "varchar",
+            "size": 15
+          },
+          {
+            "name": "Region",
+            "type": "varchar",
+            "size": 15
+          },
+          {
+            "name": "PostalCode",
+            "type": "varchar",
+            "size": 10
+          },
+          {
+            "name": "Country",
+            "type": "varchar",
+            "size": 15
+          },
+          {
+            "name": "HomePhone",
+            "type": "varchar",
+            "size": 24
+          },
+          {
+            "name": "Extension",
+            "type": "varchar",
+            "size": 4
+          },
+          {
+            "name": "Photo",
+            "type": "longblob"
+          },
+          {
+            "name": "Notes",
+            "type": "mediumtext"
+          },
+          {
+            "name": "ReportsTo",
+            "type": "varchar",
+            "size": 11
+          },
+          {
+            "name": "PhotoPath",
+            "type": "varchar",
+            "size": 255
+          },
+          {
+            "name": "Salary",
+            "type": "float"
+          }
+        ],
+        "children": [
+          {
+            "name": "Orders",
+            "columns": [
+              {
+                "name": "OrderID",
+                "type": "int",
+                "size": 5,
+                "primaryKey": "true",
+                "required": "true"
+              },
+              {
+                "name": "CustomerID",
+                "type": "varchar",
+                "size": 5
+              },
+              {
+                "name": "EmployeeID",
+                "type": "int",
+                "size": 11
+              },
+              {
+                "name": "OrderDate",
+                "type": "datetime"
+              },
+              {
+                "name": "RequiredDate",
+                "type": "datetime"
+              },
+              {
+                "name": "ShippedDate",
+                "type": "datetime"
+              },
+              {
+                "name": "ShipVia",
+                "type": "varchar",
+                "size": 40
+              },
+              {
+                "name": "Freight",
+                "type": "decimal",
+                "size": "10,4"
+              },
+              {
+                "name": "ShipName",
+                "type": "varchar",
+                "size": 40
+              },
+              {
+                "name": "ShipAddress",
+                "type": "varchar",
+                "size": 60
+              },
+              {
+                "name": "ShipCity",
+                "type": "varchar",
+                "size": 15
+              },
+              {
+                "name": "ShipRegion",
+                "type": "varchar",
+                "size": 15
+              },
+              {
+                "name": "ShipPostalCode",
+                "type": "varchar",
+                "size": 10
+              },
+              {
+                "name": "ShipCountry",
+                "type": "varchar",
+                "size": 15
+              }
+            ]
+          },
+          {
+            "name": "EmployeeTerritories",
+            "columns": [
+              {
+                "name": "EmployeeID",
+                "type": "int",
+                "size": 11,
+                "primaryKey": "true",
+                "required": "true"
+              },
+              {
+                "name": "TerritoryID",
+                "type": "varchar",
+                "size": 20,
+                "primaryKey": "true",
+                "required": "true"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ddl": "create table EMPLOYEES(\n     employeeid int\n    ,lastname varchar(20)\n    ,firstname varchar(10)\n    ,title varchar(30)\n    ,titleofcourtesy varchar(25)\n    ,birthdate datetime\n    ,hiredate datetime\n    ,address varchar(60)\n    ,city varchar(15)\n    ,region varchar(15)\n    ,postalcode varchar(10)\n    ,country varchar(15)\n    ,homephone varchar(24)\n    ,extension varchar(4)\n    ,photo longblob\n    ,notes mediumtext\n    ,reportsto int\n    ,photopath varchar(255)\n    ,salary float\n    ,territoryid varchar(20)\n    ,territorydescription varchar(50)\n    ,regionid int\n    ,regiondescription varchar(50)\n); \n\ncreate table CUSTOMERS(\n     customerid varchar(5)\n    ,companyname varchar(40)\n    ,contactname varchar(30)\n    ,contacttitle varchar(30)\n    ,address varchar(60)\n    ,city varchar(15)\n    ,region varchar(15)\n    ,postalcode varchar(10)\n    ,country varchar(15)\n    ,phone varchar(24)\n    ,fax varchar(24)\n    ,customertypeid varchar(10)\n    ,customerdesc mediumtext\n); \n\ncreate table ORDERS(\n     orderid int\n    ,customerid varchar(5)\n    ,employeeid int\n    ,orderdate datetime\n    ,requireddate datetime\n    ,shippeddate datetime\n    ,shipvia int\n    ,freight decimal(10,4)\n    ,shipname varchar(40)\n    ,shipaddress varchar(60)\n    ,shipcity varchar(15)\n    ,shipregion varchar(15)\n    ,shippostalcode varchar(10)\n    ,shipcountry varchar(15)\n    ,shipperid int\n    ,companyname varchar(40)\n    ,phone varchar(24)\n    ,productid int\n    ,unitprice decimal(10,4)\n    ,quantity smallint\n    ,discount double(8,0)\n    ,productname varchar(40)\n    ,supplierid int\n    ,categoryid int\n    ,quantityperunit varchar(20)\n    ,products_unitprice decimal(10,4)\n    ,unitsinstock smallint\n    ,unitsonorder smallint\n    ,reorderlevel smallint\n    ,discontinued bit\n    ,suppliers_companyname varchar(40)\n    ,contactname varchar(30)\n    ,contacttitle varchar(30)\n    ,address varchar(60)\n    ,city varchar(15)\n    ,region varchar(15)\n    ,postalcode varchar(10)\n    ,country varchar(15)\n    ,suppliers_phone varchar(24)\n    ,fax varchar(24)\n    ,homepage mediumtext\n    ,categoryname varchar(15)\n    ,description mediumtext\n    ,picture longblob\n); \n\n"
+      },
+      {
+        "dml": "insert into table EMPLOYEES\nselect employees.employeeid\n      ,employees.lastname\n      ,employees.firstname\n      ,employees.title\n      ,employees.titleofcourtesy\n      ,employees.birthdate\n      ,employees.hiredate\n      ,employees.address\n      ,employees.city\n      ,employees.region\n      ,employees.postalcode\n      ,employees.country\n      ,employees.homephone\n      ,employees.extension\n      ,employees.photo\n      ,employees.notes\n      ,employees.reportsto\n      ,employees.photopath\n      ,employees.salary\n      ,employeeterritories.territoryid\n      ,territories.territorydescription\n      ,territories.regionid\n      ,region.regiondescription\nfrom  northwind.employees, northwind.employeeterritories, northwind.territories, northwind.region\nwhere employeeterritories.employeeid = employees.employeeid\nand   employeeterritories.territoryid = territories.territoryid\nand   territories.regionid = region.regionid; \n \n	  insert into table CUSTOMERS\nselect customers.customerid\n      ,customers.companyname\n      ,customers.contactname\n      ,customers.contacttitle\n      ,customers.address\n      ,customers.city\n      ,customers.region\n      ,customers.postalcode\n      ,customers.country\n      ,customers.phone\n      ,customers.fax\n      ,customercustomerdemo.customertypeid\n      ,customerdemographics.customerdesc\nfrom  northwind.customers, northwind.customercustomerdemo, northwind.customerdemographics\nwhere customercustomerdemo.customerid = customers.customerid\nand   customercustomerdemo.customertypeid = customerdemographics.customertypeid; \n \n	  insert into table CUSTOMERS\nselect customers.customerid\n      ,customers.companyname\n      ,customers.contactname\n      ,customers.contacttitle\n      ,customers.address\n      ,customers.city\n      ,customers.region\n      ,customers.postalcode\n      ,customers.country\n      ,customers.phone\n      ,customers.fax\n      ,customercustomerdemo.customertypeid\n      ,customerdemographics.customerdesc\nfrom  northwind.customers, northwind.customercustomerdemo, northwind.customerdemographics\nwhere customercustomerdemo.customerid = customers.customerid\nand   customercustomerdemo.customertypeid = customerdemographics.customertypeid; \n \ninsert into table ORDERS\nselect orders.orderid\n      ,orders.customerid\n      ,orders.employeeid\n      ,orders.orderdate\n      ,orders.requireddate\n      ,orders.shippeddate\n      ,orders.shipvia\n      ,orders.freight\n      ,orders.shipname\n      ,orders.shipaddress\n      ,orders.shipcity\n      ,orders.shipregion\n      ,orders.shippostalcode\n      ,orders.shipcountry\n      ,shippers.shipperid\n      ,shippers.companyname\n      ,shippers.phone\n      ,orderdetails.productid\n      ,orderdetails.unitprice\n      ,orderdetails.quantity\n      ,orderdetails.discount\n      ,products.productname\n      ,products.supplierid\n      ,products.categoryid\n      ,products.quantityperunit\n      ,products.unitprice\n      ,products.unitsinstock\n      ,products.unitsonorder\n      ,products.reorderlevel\n      ,products.discontinued\n      ,suppliers.companyname\n      ,suppliers.contactname\n      ,suppliers.contacttitle\n      ,suppliers.address\n      ,suppliers.city\n      ,suppliers.region\n      ,suppliers.postalcode\n      ,suppliers.country\n      ,suppliers.phone\n      ,suppliers.fax\n      ,suppliers.homepage\n      ,categories.categoryname\n      ,categories.description\n      ,categories.picture\nfrom  northwind.orders, northwind.shippers, northwind.orderdetails, northwind.products, northwind.suppliers, northwind.categories\nwhere orders.shipvia = shippers.shipperid\nand   orderdetails.orderid = orders.orderid\nand   orderdetails.productid = products.productid\nand   products.supplierid = suppliers.supplierid\nand   products.categoryid = categories.categoryid; \n \n"
+      }
+    ]
+  }
+}

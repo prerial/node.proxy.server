@@ -1,0 +1,90 @@
+<div class="container container-view">
+    <div class="row">
+        <div class="col-md-14">
+            <div class="row">
+                <div class="col-md-6">
+            <h3 class="col-sm-offset-4">Reverse Engineering</h3>
+            <form name="sourceSchemaForm" novalidate class="form-horizontal" ng-submit="$ctrl.submitForm(source)">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="source_include" style="white-space:nowrap">Data Source:</label>
+                    <div class="col-sm-8">
+                        <select ng-model="source.schema_include" class="form-control" id="source_include" name="source_include" placeholder="Please select source" ng-required="true" required>
+                            <option value="" disabled selected>Please select Data Source</option>
+                            <option ng-repeat="option in $ctrl.datasource.dataSource" value="{{option.conn_name}}">{{option.conn_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="target" style="white-space:nowrap">Data Model Type:</label>
+                    <div class="col-sm-8">
+                        <select ng-model="source.schema_target"
+                                class="form-control" id="target" ng-required="true" required>
+                            <option value="" disabled selected>Please select Database</option>
+                            <option ng-repeat="option in $ctrl.datasource.dataModelType" value="{{option.name}}">{{option.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="sdatabase">Source Database:</label>
+                    <div class="col-sm-8">
+                        <select ng-model="source.sdatabase"
+                                class="form-control" id="sdatabase" ng-required="true" required>
+                            <option value="" disabled selected>Please select Source Database</option>
+                            <option ng-repeat="option in $ctrl.datasource.databaseSource" value="{{option.name}}">{{option.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="tdatabase">Target Database:</label>
+                    <div class="col-sm-8">
+                        <select ng-model="source.tdatabase"
+                                class="form-control" id="tdatabase" ng-required="true" required>
+                            <option value="" disabled selected>Please select Target Database</option>
+                            <option ng-repeat="option in $ctrl.datasource.databaseTarget" value="{{option.name}}">{{option.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <div class="checkbox">
+                            <label><input ng-model="source.single"
+                                          ng-true-value="true" ng-false-value="false"
+                                          type="checkbox" value="false" name="single">Single Step Denormalization</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="anchor">Anchors:</label>
+                    <div class="col-sm-8">
+                        <input ng-model="source.anchors" class="form-control" id="anchor" placeholder="Enter list of Anchor tables" name="anchor">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="tbl_incl" style="white-space:nowrap">Include Tables:</label>
+                    <div class="col-sm-8">
+                        <input ng-model="source.tables_include" class="form-control" id="tbl_incl" placeholder="Enter list of tables to include" name="tbl_incl">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="tbl_excl" style="white-space:nowrap">Exclude Tables:</label>
+                    <div class="col-sm-8">
+                        <input ng-model="source.tables_exclude" class="form-control" id="tbl_excl" placeholder="Enter list of tables to exclude" name="tbl_excl">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button ng-disabled="!sourceSchemaForm.$valid" type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary btn-linked"><a href="#/connections">Close</a></button>
+                    </div>
+                </div>
+<!--                <pre>source = {{source | json}}</pre> -->
+
+            </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

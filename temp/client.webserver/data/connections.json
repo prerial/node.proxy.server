@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "message": "",
+  "payload": [
+    { "id": 10000001,
+      "conn_name": "Oracle Connection",
+      "conn_username": "A123456",
+      "conn_password": "mypassword",
+      "conn_string": "Oracle connection string",
+      "conn_db": "Oracle",
+      "conn_schema": "Oracle schema"
+
+    },
+    {
+      "id": 10000002,
+      "conn_name": "MySQL Connection",
+      "conn_username": "A123456",
+      "conn_password": "mypassword",
+      "conn_string": "Mysql connection string",
+      "conn_db": "MySQL",
+      "conn_schema": "Mysql schema"
+
+    },
+    { "id": 10000003,
+      "conn_name": "Teradata Connection",
+      "conn_username": "A123456",
+      "conn_password": "mypassword",
+      "conn_string": "Teradata connection string",
+      "conn_db": "Teradata",
+      "conn_schema": "Teradata schema"
+
+    },
+    { "id": 10000004,
+      "conn_name": "Microsoft SQL Server Connection",
+      "conn_username": "A123456",
+      "conn_password": "mypassword",
+      "conn_string": "Microsoft sql server connection string",
+      "conn_db": "Microsoft SQL Server",
+      "conn_schema": "Microsoft sql server schema"
+
+    }
+  ]
+}
+
