@@ -1,0 +1,96 @@
+table_schema,table_name,column_name,ordinal_position,column_type,data_length,column_default,is_nullable,data_type,numeric_precision,numeric_scale,extra,index_name,referenced_table_schema,referenced_table_name,referenced_column_name,constraint_name,constraint_type
+northwind,categories,categoryid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,categories,categoryname,2,varchar(15),15,None,NO,varchar,None,None,,CategoryName,None,None,None,None,None
+northwind,categories,description,3,mediumtext,16777215,None,YES,mediumtext,None,None,,None,None,None,None,None,None
+northwind,categories,picture,4,longblob,4294967295,None,YES,longblob,None,None,,None,None,None,None,None,None
+northwind,customercustomerdemo,customerid,1,varchar(5),5,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,customercustomerdemo,customerid,1,varchar(5),5,None,NO,varchar,None,None,,FK_CustomerCustomerDemo_Customers,northwind,customers,customerid,FK_CustomerCustomerDemo_Customers,FOREIGN KEY
+northwind,customercustomerdemo,customertypeid,2,varchar(10),10,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,customercustomerdemo,customertypeid,2,varchar(10),10,None,NO,varchar,None,None,,FK_CustomerCustomerDemo_CustomerDemographics,northwind,customerdemographics,customertypeid,FK_CustomerCustomerDemo_CustomerDemographics,FOREIGN KEY
+northwind,customerdemographics,customertypeid,1,varchar(10),10,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,customerdemographics,customerdesc,2,mediumtext,16777215,None,YES,mediumtext,None,None,,None,None,None,None,None,None
+northwind,customers,customerid,1,varchar(5),5,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,customers,companyname,2,varchar(40),40,None,NO,varchar,None,None,,CompanyName,None,None,None,None,None
+northwind,customers,contactname,3,varchar(30),30,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,customers,contacttitle,4,varchar(30),30,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,customers,address,5,varchar(60),60,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,customers,city,6,varchar(15),15,None,YES,varchar,None,None,,City,None,None,None,None,None
+northwind,customers,region,7,varchar(15),15,None,YES,varchar,None,None,,Region,None,None,None,None,None
+northwind,customers,postalcode,8,varchar(10),10,None,YES,varchar,None,None,,PostalCode,None,None,None,None,None
+northwind,customers,country,9,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,customers,phone,10,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,customers,fax,11,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,employeeid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,employees,lastname,2,varchar(20),20,None,NO,varchar,None,None,,LastName,None,None,None,None,None
+northwind,employees,firstname,3,varchar(10),10,None,NO,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,title,4,varchar(30),30,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,titleofcourtesy,5,varchar(25),25,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,birthdate,6,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+northwind,employees,hiredate,7,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+northwind,employees,address,8,varchar(60),60,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,city,9,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,region,10,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,postalcode,11,varchar(10),10,None,YES,varchar,None,None,,PostalCode,None,None,None,None,None
+northwind,employees,country,12,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,homephone,13,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,extension,14,varchar(4),4,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,photo,15,longblob,4294967295,None,YES,longblob,None,None,,None,None,None,None,None,None
+northwind,employees,notes,16,mediumtext,16777215,None,NO,mediumtext,None,None,,None,None,None,None,None,None
+northwind,employees,reportsto,17,int(11),None,None,YES,int,10,0,,FK_Employees_Employees,northwind,employees,employeeid,FK_Employees_Employees,FOREIGN KEY
+northwind,employees,photopath,18,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,employees,salary,19,float,None,None,YES,float,12,None,,None,None,None,None,None,None
+northwind,employeeterritories,employeeid,1,int(11),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,employeeterritories,employeeid,1,int(11),None,None,NO,int,10,0,,FK_EmployeeTerritories_Employees,northwind,employees,employeeid,FK_EmployeeTerritories_Employees,FOREIGN KEY
+northwind,employeeterritories,territoryid,2,varchar(20),20,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,employeeterritories,territoryid,2,varchar(20),20,None,NO,varchar,None,None,,FK_EmployeeTerritories_Territories,northwind,territories,territoryid,FK_EmployeeTerritories_Territories,FOREIGN KEY
+northwind,orderdetails,orderid,1,int(11),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,orderdetails,orderid,1,int(11),None,None,NO,int,10,0,,FK_OrderDetails_Orders,northwind,orders,orderid,FK_OrderDetails_Orders,FOREIGN KEY
+northwind,orderdetails,productid,2,int(11),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,orderdetails,productid,2,int(11),None,None,NO,int,10,0,,FK_OrderDetails_Products,northwind,products,productid,FK_OrderDetails_Products,FOREIGN KEY
+northwind,orderdetails,unitprice,3,"decimal(10,4)",None,0.0000,NO,decimal,10,4,,None,None,None,None,None,None
+northwind,orderdetails,quantity,4,smallint(2),None,1,NO,smallint,5,0,,None,None,None,None,None,None
+northwind,orderdetails,discount,5,"double(8,0)",None,0,NO,double,8,0,,None,None,None,None,None,None
+northwind,orders,orderid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,orders,customerid,2,varchar(5),5,None,YES,varchar,None,None,,FK_Orders_Customers,northwind,customers,customerid,FK_Orders_Customers,FOREIGN KEY
+northwind,orders,employeeid,3,int(11),None,None,YES,int,10,0,,FK_Orders_Employees,northwind,employees,employeeid,FK_Orders_Employees,FOREIGN KEY
+northwind,orders,orderdate,4,datetime,None,None,YES,datetime,None,None,,OrderDate,None,None,None,None,None
+northwind,orders,requireddate,5,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+northwind,orders,shippeddate,6,datetime,None,None,YES,datetime,None,None,,ShippedDate,None,None,None,None,None
+northwind,orders,shipvia,7,int(11),None,None,YES,int,10,0,,FK_Orders_Shippers,northwind,shippers,shipperid,FK_Orders_Shippers,FOREIGN KEY
+northwind,orders,freight,8,"decimal(10,4)",None,0.0000,YES,decimal,10,4,,None,None,None,None,None,None
+northwind,orders,shipname,9,varchar(40),40,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,orders,shipaddress,10,varchar(60),60,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,orders,shipcity,11,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,orders,shipregion,12,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,orders,shippostalcode,13,varchar(10),10,None,YES,varchar,None,None,,ShipPostalCode,None,None,None,None,None
+northwind,orders,shipcountry,14,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,products,productid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,products,productname,2,varchar(40),40,None,NO,varchar,None,None,,ProductName,None,None,None,None,None
+northwind,products,supplierid,3,int(11),None,None,YES,int,10,0,,FK_Products_Suppliers,northwind,suppliers,supplierid,FK_Products_Suppliers,FOREIGN KEY
+northwind,products,categoryid,4,int(11),None,None,YES,int,10,0,,FK_Products_Categories,northwind,categories,categoryid,FK_Products_Categories,FOREIGN KEY
+northwind,products,quantityperunit,5,varchar(20),20,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,products,unitprice,6,"decimal(10,4)",None,0.0000,YES,decimal,10,4,,None,None,None,None,None,None
+northwind,products,unitsinstock,7,smallint(2),None,0,YES,smallint,5,0,,None,None,None,None,None,None
+northwind,products,unitsonorder,8,smallint(2),None,0,YES,smallint,5,0,,None,None,None,None,None,None
+northwind,products,reorderlevel,9,smallint(2),None,0,YES,smallint,5,0,,None,None,None,None,None,None
+northwind,products,discontinued,10,bit(1),None,b'0',NO,bit,1,None,,None,None,None,None,None,None
+northwind,region,regionid,1,int(11),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,region,regiondescription,2,varchar(50),50,None,NO,varchar,None,None,,None,None,None,None,None,None
+northwind,shippers,shipperid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,shippers,companyname,2,varchar(40),40,None,NO,varchar,None,None,,None,None,None,None,None,None
+northwind,shippers,phone,3,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,supplierid,1,int(11),None,None,NO,int,10,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,suppliers,companyname,2,varchar(40),40,None,NO,varchar,None,None,,CompanyName,None,None,None,None,None
+northwind,suppliers,contactname,3,varchar(30),30,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,contacttitle,4,varchar(30),30,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,address,5,varchar(60),60,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,city,6,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,region,7,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,postalcode,8,varchar(10),10,None,YES,varchar,None,None,,PostalCode,None,None,None,None,None
+northwind,suppliers,country,9,varchar(15),15,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,phone,10,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,fax,11,varchar(24),24,None,YES,varchar,None,None,,None,None,None,None,None,None
+northwind,suppliers,homepage,12,mediumtext,16777215,None,YES,mediumtext,None,None,,None,None,None,None,None,None
+northwind,territories,territoryid,1,varchar(20),20,None,NO,varchar,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+northwind,territories,territorydescription,2,varchar(50),50,None,NO,varchar,None,None,,None,None,None,None,None,None
+northwind,territories,regionid,3,int(11),None,None,NO,int,10,0,,FK_Territories_Region,northwind,region,regionid,FK_Territories_Region,FOREIGN KEY
