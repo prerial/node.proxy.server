@@ -1,0 +1,1 @@
+C:\FAST\anaconda\python27\win64\431\python.exe C:/FAST/PycharmProjects/workspaces/dmc/server.python/flaskServerTemp.py
