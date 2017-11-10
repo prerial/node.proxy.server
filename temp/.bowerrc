@@ -1,5 +1,0 @@
-{
-  "directory": "client.webserver/bower_components",
-  "proxy":"http://proxy.jpmchase.net:8080",
-  "https-proxy":"http://proxy.jpmchase.net:8080"
-}
