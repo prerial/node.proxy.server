@@ -1,0 +1,16 @@
+.table-striped tbody tr.selected{
+    background-color: #ddd !important;
+    border:1px solid  #ddd;
+    color: #000;
+}
+.table-striped tbody tr:hover{
+    color: #607D8B;
+    background-color: #eee;
+}
+button.delete {
+    padding-top:1px;
+    padding-bottom:1px;
+    border-radius: .2em;
+    color: rgb(163, 12, 37);
+    font-weight: bold;
+}

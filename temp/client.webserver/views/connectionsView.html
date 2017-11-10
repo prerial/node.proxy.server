@@ -1,0 +1,108 @@
+<div class="container-fluid breadcrumb-wrapper" style="margin-top:0;top:50px">
+    <div style="float:right;margin-top:8px;">
+        <button class="btn btn-xs btn-primary btn-linked"><a href="" data-toggle="modal" ng-click="$ctrl.gotoDetail(null)" data-target="#connectionModal">Add Connection</a></button>
+    </div>
+</div>
+<div  class="container-view" style="margin:110px 40px;">
+    <div>
+        <h3>Manage Connections</h3>
+        <table class="table table-striped table-bordered ">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Data Source Name</th>
+                <th>Connection String</th>
+                <th>Database Name</th>
+                <th>Schema</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tr ng-repeat="conn in $ctrl.connections" ng-click="$ctrl.gotoDetail(conn, $index)" ng-class="{selected: conn === $ctrl.selectedConn}">
+                <td style="text-align: center;">{{$index+1}} </td>
+                <td><a href="" data-toggle="modal" data-target="#connectionModal">{{conn.conn_name}}</a></td>
+                <td>{{conn.conn_string }}</td>
+                <td>{{conn.conn_db}} </td>
+                <td>{{conn.conn_schema}} </td>
+                <td style="text-align: center;"><button class="delete"  ng-click="$ctrl.delete(conn); $event.stopPropagation()">x</button></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<!-- Modal - Manage Connections-->
+<div class="modal fade" id="connectionModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" >
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Connection Parameters</h4>
+            </div>
+
+            <form name="connectionForm" novalidate ng-submit="$ctrl.formSubmit($ctrl.connection)" class="form-horizontal">
+            <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="conn_name">Data Source Name:</label>
+                        <div class="col-sm-7">
+                            <input  class="form-control" ng-model="$ctrl.connection.conn_name" name="conn_name" id="conn_name" placeholder="Please enter connection name" ng-required="true" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="username">User Name:</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" ng-model="$ctrl.connection.conn_username" name="username" id="username" placeholder="Please enter Username" ng-required="true" required >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="conn_password">Password:</label>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control" ng-model="$ctrl.connection.conn_password" name="conn_password" id="conn_password" placeholder="Please enter Password" ng-required="true" required >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="conn_string">Connection String:</label>
+                        <div class="col-sm-7">
+                            <input  class="form-control" ng-model="$ctrl.connection.conn_string" name="conn_string" id="conn_string"  placeholder="Please enter connection string" ng-required="true" required>
+                        </div>
+                    </div>
+
+                    <!-- TODO - Replace with below  -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="conn_db">Database:</label>
+                        <div class="col-sm-7">
+                           <select class="form-control" ng-model="$ctrl.connection.conn_db" name="conn_db" id="conn_db" ng-required="true" required>
+                                <option value="" disabled selected>Please select Database</option>
+                                <option ng-repeat="option in $ctrl.databases" value="{{option.name}}">{{option.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="conn_schema">Schema:</label>
+                        <div class="col-sm-7">
+                            <input  class="form-control" ng-model="$ctrl.connection.conn_schema" id="conn_schema" placeholder="Please enter Username" ng-required="true" required >
+                        </div>
+                    </div>
+
+            </div> <!--/body-->
+
+            <div class="modal-footer">
+                <div style="margin-right:50px">
+                    <button type="button" ng-click="" class="btn btn-primary" data-dismiss="modal">Test Connection</button>
+                    <button type="submit" ng-disabled="!connectionForm.$valid" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!--- End Modal -->

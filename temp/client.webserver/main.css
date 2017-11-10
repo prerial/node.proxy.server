@@ -1,0 +1,1149 @@
+body {
+    opacity: 1;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    transition: opacity 1s;
+}
+
+.ng-cloak {
+    opacity: 0;
+}
+
+.ng-invalid:not(form){
+    border: 1px solid red !important;
+}
+
+.container-view{
+    margin:80px 40px;
+}
+section {
+    padding-top: 30px;
+}
+
+.page-header h1 > small > a {
+    color: #999;
+}
+.page-header h1 > small > a:hover {
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+}
+
+.bs-social {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+
+    .bs-social {
+        text-align: left;
+    }
+
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.bs-social-buttons {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.bs-social-buttons li {
+    display: inline-block;
+    padding: 5px 8px;
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+
+    .visible-xs.collapse.in {
+        display: block!important;
+    }
+    .visible-xs.collapse {
+        display: none!important;
+    }
+
+}
+
+.navbar-fixed-top .collapse {
+    border-top: 1px solid #e7e7e7;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.show-grid {
+  margin-bottom: 15px;
+}
+
+/*
+ * Container
+ *
+ * Tweak to width of container.
+ */
+
+/*@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}*/
+
+/*
+ * Tabs
+ *
+ * Tweaks to the Tabs.
+ */
+
+.code .nav-tabs {
+border-bottom: 1px solid #ccc;
+}
+
+.code pre, .code code {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.code .nav-tabs>li.active>a, .code .nav-tabs>li.active>a:hover, .code .nav-tabs>li.active>a:focus {
+background-color: #f8f8f8;
+border: 1px solid #ccc;
+border-bottom-color: transparent;
+}
+
+/*
+ * Button Inverse
+ *
+ * Buttons in the masthead.
+ */
+
+.btn-outline-inverse {
+color: #fff;
+background-color: transparent;
+border-color: #cdbfe3;
+margin: 10px;
+}
+
+@media (min-width: 768px) {
+
+    .btn-outline-inverse {
+        width: auto;
+        margin: 20px 5px 20px 0;
+        padding: 18px 24px;
+        font-size: 21px;
+    }
+
+}
+
+.btn-outline-inverse:hover, .btn-outline-inverse:focus, .btn-outline-inverse:active {
+color: #563d7c;
+text-shadow: none;
+background-color: #fff;
+border-color: #fff;
+}
+
+
+/* Page headers */
+.bs-header {
+  padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  color: #cdbfe3;
+  background-color: #563d7c;
+  background-image: url(header.png);
+}
+.bs-header a {
+  color: #fff;
+  font-weight: normal;
+}
+.bs-header h1 {
+  color: #fff;
+}
+.bs-header p {
+  font-weight: 200;
+  line-height: 1.4;
+}
+.bs-header .container {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bs-header {
+    font-size: 30px;
+    text-align: left;
+  }
+  .bs-header h1 {
+    font-size: 100px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .bs-header p {
+    margin-right: 25%;
+  }
+}
+
+.navbar-inner {
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+}
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar.affix {
+  position: static;
+}
+
+/* First level of nav */
+.bs-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+  display: block;
+  color: #716b7a;
+  padding: 5px 20px;
+}
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+  border-right: 1px solid #dbd8e0;
+}
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #563d7c;
+  background-color: transparent;
+  border-right: 1px solid #563d7c;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-sidebar .nav .nav {
+  display: none; /* Hide by default, but at >768px, show it */
+  margin-bottom: 8px;
+}
+.bs-sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+  .bs-sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .bs-sidebar.affix,
+  .bs-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .bs-sidebar.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+    top: 80px;
+  }
+  .bs-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+  .bs-sidebar.affix-bottom .bs-sidenav,
+  .bs-sidebar.affix .bs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-sidebar.affix-bottom,
+  .bs-sidebar.affix {
+    width: 263px;
+  }
+}
+
+
+/* Not enough room on mobile for markup tab, js tab, and plunk btn.
+  And no one cares about plunk button on a phone anyway */
+@media only screen and (max-device-width: 480px) {
+    #plunk-btn {
+        display: none;
+    }
+}
+
+.navbar-nav .dropdown .navbar-brand {
+    max-width: 100%;
+    margin-right: inherit;
+    margin-left: inherit;
+}
+
+.header-placeholder {
+    height: 50px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .dropdown.open > .navbar-brand + .dropdown-menu {
+        left: 10px;
+    }
+
+    .header-placeholder {
+        height: 50px;
+    }
+
+    .navbar-nav .dropdown .navbar-brand {
+        max-width: 200px;
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+
+}
+.table-striped tbody tr.selected{
+    background-color: #ddd !important;
+    border:1px solid  #ddd;
+    color: #000;
+}
+.table-striped tbody tr:hover{
+    color: #607D8B;
+    background-color: #eee;
+}
+button.delete {
+    padding-top:1px;
+    padding-bottom:1px;
+    border-radius: .2em;
+    color: rgb(163, 12, 37);
+    font-weight: bold;
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+@-moz-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+    }
+}
+@-o-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translateY(0);
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error{
+    border-color:red !important;
+}
+.pre-tooltip {
+    position: absolute;
+    display: none;
+    padding: 0;
+    max-width: 276px;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pre-tooltip * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tooltip-inner {
+    margin: 0;
+    padding: 8px;
+    color: #fff;
+    text-decoration: none;
+    background-color: red;
+    border: 1px solid #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+.tooltip-arrow,
+.tooltip-arrow:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border:12px solid;
+    display: block;
+    border-color: red transparent transparent transparent;
+}
+
+.tooltip-arrow:after {
+    content: "";
+}
+
+.pre-tooltip.top {
+    padding: 0 0 12px 0;
+}
+.pre-tooltip.top.track {
+    padding: 0;
+}
+/*
+.pre-tooltip.top.track .tooltip-arrow, .top.track.pre-popover .tooltip-arrow,
+.pre-tooltip.top.track .popover-arrow,
+.top.track.pre-popover .popover-arrow,
+.pre-popover.top.track .tooltip-arrow,
+.pre-popover.top.track .popover-arrow {
+    display: none;
+}
+*/
+.pre-tooltip.top .tooltip-arrow {
+    bottom: 8px;
+    left: 50%;
+    margin-left: -12px;
+    border-top-color: red;
+}
+
+.pre-tooltip.top .tooltip-arrow.left {
+    left: 20px;
+    margin-left: 0;
+}
+.pre-tooltip.top .tooltip-arrow.right {
+    right: 20px;
+    left: auto;
+    margin-left: 0;
+}
+.pre-tooltip.top .tooltip-arrow:after {
+    bottom: 1px;
+    margin-left: -12px;
+    border-top-color: red;
+    border-bottom-width: 0;
+}
+/*
+.pre-tooltip.bottom, .bottom.pre-popover,
+.pre-popover.bottom {
+    padding: 12px 0 0 0;
+}
+/*
+.pre-tooltip.bottom.track, .bottom.track.pre-popover,
+.pre-popover.bottom.track {
+    padding: 0;
+}
+/*
+.pre-tooltip.bottom.track .tooltip-arrow, .bottom.track.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom.track .popover-arrow,
+.bottom.track.pre-popover .popover-arrow,
+.pre-popover.bottom.track .tooltip-arrow,
+.pre-popover.bottom.track .popover-arrow {
+    display: none;
+}
+/*
+.pre-tooltip.bottom .tooltip-arrow, .bottom.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom .popover-arrow,
+.bottom.pre-popover .popover-arrow,
+.pre-popover.bottom .tooltip-arrow,
+.pre-popover.bottom .popover-arrow {
+    top: -11px;
+    left: 50%;
+    margin-left: -12px;
+    border-bottom-color: #999;
+}
+/*
+.pre-tooltip.bottom .tooltip-arrow.left, .bottom.pre-popover .tooltip-arrow.left,
+.pre-tooltip.bottom .popover-arrow.left,
+.bottom.pre-popover .popover-arrow.left,
+.pre-popover.bottom .tooltip-arrow.left,
+.pre-popover.bottom .popover-arrow.left {
+    left: 20px;
+    margin-left: 0;
+}
+/*
+.pre-tooltip.bottom .tooltip-arrow.right, .bottom.pre-popover .tooltip-arrow.right,
+.pre-tooltip.bottom .popover-arrow.right,
+.bottom.pre-popover .popover-arrow.right,
+.pre-popover.bottom .tooltip-arrow.right,
+.pre-popover.bottom .popover-arrow.right {
+    right: 20px;
+    left: auto;
+    margin-left: 0;
+}
+.pre-tooltip.bottom .tooltip-arrow:after, .bottom.pre-popover .tooltip-arrow:after,
+.pre-tooltip.bottom .popover-arrow:after,
+.bottom.pre-popover .popover-arrow:after,
+.pre-popover.bottom .tooltip-arrow:after,
+.pre-popover.bottom .popover-arrow:after {
+    top: 1px;
+    margin-left: -12px;
+    border-bottom-color: #fff;
+    border-top-width: 0;
+}
+.pre-tooltip.right, .right.pre-popover, .pre-tooltip.right-top, .right-top.pre-popover, .pre-tooltip.right-bottom, .right-bottom.pre-popover, .pre-tooltip.bottom-right, .bottom-right.pre-popover, .pre-tooltip.top-right, .top-right.pre-popover,
+.pre-popover.right,
+.pre-popover.right-top,
+.pre-popover.right-bottom,
+.pre-popover.bottom-right,
+.pre-popover.top-right {
+    padding: 0 0 0 12px;
+}
+.pre-tooltip.right.track, .right.track.pre-popover, .pre-tooltip.right-top.track, .right-top.track.pre-popover, .pre-tooltip.right-bottom.track, .right-bottom.track.pre-popover, .pre-tooltip.bottom-right.track, .bottom-right.track.pre-popover, .pre-tooltip.top-right.track, .top-right.track.pre-popover,
+.pre-popover.right.track,
+.pre-popover.right-top.track,
+.pre-popover.right-bottom.track,
+.pre-popover.bottom-right.track,
+.pre-popover.top-right.track {
+    padding: 0;
+}
+/*
+.pre-tooltip.right.track .tooltip-arrow, .right.track.pre-popover .tooltip-arrow,
+.pre-tooltip.right.track .popover-arrow,
+.right.track.pre-popover .popover-arrow, .pre-tooltip.right-top.track .tooltip-arrow, .right-top.track.pre-popover .tooltip-arrow,
+.pre-tooltip.right-top.track .popover-arrow,
+.right-top.track.pre-popover .popover-arrow, .pre-tooltip.right-bottom.track .tooltip-arrow, .right-bottom.track.pre-popover .tooltip-arrow,
+.pre-tooltip.right-bottom.track .popover-arrow,
+.right-bottom.track.pre-popover .popover-arrow, .pre-tooltip.bottom-right.track .tooltip-arrow, .bottom-right.track.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom-right.track .popover-arrow,
+.bottom-right.track.pre-popover .popover-arrow, .pre-tooltip.top-right.track .tooltip-arrow, .top-right.track.pre-popover .tooltip-arrow,
+.pre-tooltip.top-right.track .popover-arrow,
+.top-right.track.pre-popover .popover-arrow,
+.pre-popover.right.track .tooltip-arrow,
+.pre-popover.right.track .popover-arrow,
+.pre-popover.right-top.track .tooltip-arrow,
+.pre-popover.right-top.track .popover-arrow,
+.pre-popover.right-bottom.track .tooltip-arrow,
+.pre-popover.right-bottom.track .popover-arrow,
+.pre-popover.bottom-right.track .tooltip-arrow,
+.pre-popover.bottom-right.track .popover-arrow,
+.pre-popover.top-right.track .tooltip-arrow,
+.pre-popover.top-right.track .popover-arrow {
+    display: none;
+}
+.pre-tooltip.right .tooltip-arrow, .right.pre-popover .tooltip-arrow,
+.pre-tooltip.right .popover-arrow,
+.right.pre-popover .popover-arrow, .pre-tooltip.right-top .tooltip-arrow, .right-top.pre-popover .tooltip-arrow,
+.pre-tooltip.right-top .popover-arrow,
+.right-top.pre-popover .popover-arrow, .pre-tooltip.right-bottom .tooltip-arrow, .right-bottom.pre-popover .tooltip-arrow,
+.pre-tooltip.right-bottom .popover-arrow,
+.right-bottom.pre-popover .popover-arrow, .pre-tooltip.bottom-right .tooltip-arrow, .bottom-right.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom-right .popover-arrow,
+.bottom-right.pre-popover .popover-arrow, .pre-tooltip.top-right .tooltip-arrow, .top-right.pre-popover .tooltip-arrow,
+.pre-tooltip.top-right .popover-arrow,
+.top-right.pre-popover .popover-arrow,
+.pre-popover.right .tooltip-arrow,
+.pre-popover.right .popover-arrow,
+.pre-popover.right-top .tooltip-arrow,
+.pre-popover.right-top .popover-arrow,
+.pre-popover.right-bottom .tooltip-arrow,
+.pre-popover.right-bottom .popover-arrow,
+.pre-popover.bottom-right .tooltip-arrow,
+.pre-popover.bottom-right .popover-arrow,
+.pre-popover.top-right .tooltip-arrow,
+.pre-popover.top-right .popover-arrow {
+    left: -11px;
+    top: 50%;
+    margin-top: -12px;
+    border-right-color: #999;
+}
+.pre-tooltip.right .tooltip-arrow.top, .right.pre-popover .tooltip-arrow.top,
+.pre-tooltip.right .popover-arrow.top,
+.right.pre-popover .popover-arrow.top, .pre-tooltip.right-top .tooltip-arrow.top, .right-top.pre-popover .tooltip-arrow.top,
+.pre-tooltip.right-top .popover-arrow.top,
+.right-top.pre-popover .popover-arrow.top, .pre-tooltip.right-bottom .tooltip-arrow.top, .right-bottom.pre-popover .tooltip-arrow.top,
+.pre-tooltip.right-bottom .popover-arrow.top,
+.right-bottom.pre-popover .popover-arrow.top, .pre-tooltip.bottom-right .tooltip-arrow.top, .bottom-right.pre-popover .tooltip-arrow.top,
+.pre-tooltip.bottom-right .popover-arrow.top,
+.bottom-right.pre-popover .popover-arrow.top, .pre-tooltip.top-right .tooltip-arrow.top, .top-right.pre-popover .tooltip-arrow.top,
+.pre-tooltip.top-right .popover-arrow.top,
+.top-right.pre-popover .popover-arrow.top,
+.pre-popover.right .tooltip-arrow.top,
+.pre-popover.right .popover-arrow.top,
+.pre-popover.right-top .tooltip-arrow.top,
+.pre-popover.right-top .popover-arrow.top,
+.pre-popover.right-bottom .tooltip-arrow.top,
+.pre-popover.right-bottom .popover-arrow.top,
+.pre-popover.bottom-right .tooltip-arrow.top,
+.pre-popover.bottom-right .popover-arrow.top,
+.pre-popover.top-right .tooltip-arrow.top,
+.pre-popover.top-right .popover-arrow.top {
+    margin-top: 0;
+    top: 15%;
+}
+.pre-tooltip.right .tooltip-arrow.bottom, .right.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.right .popover-arrow.bottom,
+.right.pre-popover .popover-arrow.bottom, .pre-tooltip.right-top .tooltip-arrow.bottom, .right-top.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.right-top .popover-arrow.bottom,
+.right-top.pre-popover .popover-arrow.bottom, .pre-tooltip.right-bottom .tooltip-arrow.bottom, .right-bottom.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.right-bottom .popover-arrow.bottom,
+.right-bottom.pre-popover .popover-arrow.bottom, .pre-tooltip.bottom-right .tooltip-arrow.bottom, .bottom-right.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.bottom-right .popover-arrow.bottom,
+.bottom-right.pre-popover .popover-arrow.bottom, .pre-tooltip.top-right .tooltip-arrow.bottom, .top-right.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.top-right .popover-arrow.bottom,
+.top-right.pre-popover .popover-arrow.bottom,
+.pre-popover.right .tooltip-arrow.bottom,
+.pre-popover.right .popover-arrow.bottom,
+.pre-popover.right-top .tooltip-arrow.bottom,
+.pre-popover.right-top .popover-arrow.bottom,
+.pre-popover.right-bottom .tooltip-arrow.bottom,
+.pre-popover.right-bottom .popover-arrow.bottom,
+.pre-popover.bottom-right .tooltip-arrow.bottom,
+.pre-popover.bottom-right .popover-arrow.bottom,
+.pre-popover.top-right .tooltip-arrow.bottom,
+.pre-popover.top-right .popover-arrow.bottom {
+    bottom: 15%;
+    top: auto;
+}
+.pre-tooltip.right .tooltip-arrow:after, .right.pre-popover .tooltip-arrow:after,
+.pre-tooltip.right .popover-arrow:after,
+.right.pre-popover .popover-arrow:after, .pre-tooltip.right-top .tooltip-arrow:after, .right-top.pre-popover .tooltip-arrow:after,
+.pre-tooltip.right-top .popover-arrow:after,
+.right-top.pre-popover .popover-arrow:after, .pre-tooltip.right-bottom .tooltip-arrow:after, .right-bottom.pre-popover .tooltip-arrow:after,
+.pre-tooltip.right-bottom .popover-arrow:after,
+.right-bottom.pre-popover .popover-arrow:after, .pre-tooltip.bottom-right .tooltip-arrow:after, .bottom-right.pre-popover .tooltip-arrow:after,
+.pre-tooltip.bottom-right .popover-arrow:after,
+.bottom-right.pre-popover .popover-arrow:after, .pre-tooltip.top-right .tooltip-arrow:after, .top-right.pre-popover .tooltip-arrow:after,
+.pre-tooltip.top-right .popover-arrow:after,
+.top-right.pre-popover .popover-arrow:after,
+.pre-popover.right .tooltip-arrow:after,
+.pre-popover.right .popover-arrow:after,
+.pre-popover.right-top .tooltip-arrow:after,
+.pre-popover.right-top .popover-arrow:after,
+.pre-popover.right-bottom .tooltip-arrow:after,
+.pre-popover.right-bottom .popover-arrow:after,
+.pre-popover.bottom-right .tooltip-arrow:after,
+.pre-popover.bottom-right .popover-arrow:after,
+.pre-popover.top-right .tooltip-arrow:after,
+.pre-popover.top-right .popover-arrow:after {
+    left: 1px;
+    bottom: -12px;
+    border-right-color: #fff;
+    border-left-width: 0;
+}
+.pre-tooltip.left, .left.pre-popover, .pre-tooltip.left-top, .left-top.pre-popover, .pre-tooltip.left-bottom, .left-bottom.pre-popover, .pre-tooltip.bottom-left, .bottom-left.pre-popover, .pre-tooltip.top-left, .top-left.pre-popover,
+.pre-popover.left,
+.pre-popover.left-top,
+.pre-popover.left-bottom,
+.pre-popover.bottom-left,
+.pre-popover.top-left {
+    padding: 0 12px 0 0;
+}
+.pre-tooltip.left.track, .left.track.pre-popover, .pre-tooltip.left-top.track, .left-top.track.pre-popover, .pre-tooltip.left-bottom.track, .left-bottom.track.pre-popover, .pre-tooltip.bottom-left.track, .bottom-left.track.pre-popover, .pre-tooltip.top-left.track, .top-left.track.pre-popover,
+.pre-popover.left.track,
+.pre-popover.left-top.track,
+.pre-popover.left-bottom.track,
+.pre-popover.bottom-left.track,
+.pre-popover.top-left.track {
+    padding: 0;
+}
+/*
+.pre-tooltip.left.track .tooltip-arrow, .left.track.pre-popover .tooltip-arrow,
+.pre-tooltip.left.track .popover-arrow,
+.left.track.pre-popover .popover-arrow, .pre-tooltip.left-top.track .tooltip-arrow, .left-top.track.pre-popover .tooltip-arrow,
+.pre-tooltip.left-top.track .popover-arrow,
+.left-top.track.pre-popover .popover-arrow, .pre-tooltip.left-bottom.track .tooltip-arrow, .left-bottom.track.pre-popover .tooltip-arrow,
+.pre-tooltip.left-bottom.track .popover-arrow,
+.left-bottom.track.pre-popover .popover-arrow, .pre-tooltip.bottom-left.track .tooltip-arrow, .bottom-left.track.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom-left.track .popover-arrow,
+.bottom-left.track.pre-popover .popover-arrow, .pre-tooltip.top-left.track .tooltip-arrow, .top-left.track.pre-popover .tooltip-arrow,
+.pre-tooltip.top-left.track .popover-arrow,
+.top-left.track.pre-popover .popover-arrow,
+.pre-popover.left.track .tooltip-arrow,
+.pre-popover.left.track .popover-arrow,
+.pre-popover.left-top.track .tooltip-arrow,
+.pre-popover.left-top.track .popover-arrow,
+.pre-popover.left-bottom.track .tooltip-arrow,
+.pre-popover.left-bottom.track .popover-arrow,
+.pre-popover.bottom-left.track .tooltip-arrow,
+.pre-popover.bottom-left.track .popover-arrow,
+.pre-popover.top-left.track .tooltip-arrow,
+.pre-popover.top-left.track .popover-arrow {
+    display: none;
+}
+.pre-tooltip.left .tooltip-arrow, .left.pre-popover .tooltip-arrow,
+.pre-tooltip.left .popover-arrow,
+.left.pre-popover .popover-arrow, .pre-tooltip.left-top .tooltip-arrow, .left-top.pre-popover .tooltip-arrow,
+.pre-tooltip.left-top .popover-arrow,
+.left-top.pre-popover .popover-arrow, .pre-tooltip.left-bottom .tooltip-arrow, .left-bottom.pre-popover .tooltip-arrow,
+.pre-tooltip.left-bottom .popover-arrow,
+.left-bottom.pre-popover .popover-arrow, .pre-tooltip.bottom-left .tooltip-arrow, .bottom-left.pre-popover .tooltip-arrow,
+.pre-tooltip.bottom-left .popover-arrow,
+.bottom-left.pre-popover .popover-arrow, .pre-tooltip.top-left .tooltip-arrow, .top-left.pre-popover .tooltip-arrow,
+.pre-tooltip.top-left .popover-arrow,
+.top-left.pre-popover .popover-arrow,
+.pre-popover.left .tooltip-arrow,
+.pre-popover.left .popover-arrow,
+.pre-popover.left-top .tooltip-arrow,
+.pre-popover.left-top .popover-arrow,
+.pre-popover.left-bottom .tooltip-arrow,
+.pre-popover.left-bottom .popover-arrow,
+.pre-popover.bottom-left .tooltip-arrow,
+.pre-popover.bottom-left .popover-arrow,
+.pre-popover.top-left .tooltip-arrow,
+.pre-popover.top-left .popover-arrow {
+    right: -11px;
+    top: 50%;
+    margin-top: -12px;
+    border-left-color: #999;
+}
+/*
+.pre-tooltip.left .tooltip-arrow.top, .left.pre-popover .tooltip-arrow.top,
+.pre-tooltip.left .popover-arrow.top,
+.left.pre-popover .popover-arrow.top, .pre-tooltip.left-top .tooltip-arrow.top, .left-top.pre-popover .tooltip-arrow.top,
+.pre-tooltip.left-top .popover-arrow.top,
+.left-top.pre-popover .popover-arrow.top, .pre-tooltip.left-bottom .tooltip-arrow.top, .left-bottom.pre-popover .tooltip-arrow.top,
+.pre-tooltip.left-bottom .popover-arrow.top,
+.left-bottom.pre-popover .popover-arrow.top, .pre-tooltip.bottom-left .tooltip-arrow.top, .bottom-left.pre-popover .tooltip-arrow.top,
+.pre-tooltip.bottom-left .popover-arrow.top,
+.bottom-left.pre-popover .popover-arrow.top, .pre-tooltip.top-left .tooltip-arrow.top, .top-left.pre-popover .tooltip-arrow.top,
+.pre-tooltip.top-left .popover-arrow.top,
+.top-left.pre-popover .popover-arrow.top,
+.pre-popover.left .tooltip-arrow.top,
+.pre-popover.left .popover-arrow.top,
+.pre-popover.left-top .tooltip-arrow.top,
+.pre-popover.left-top .popover-arrow.top,
+.pre-popover.left-bottom .tooltip-arrow.top,
+.pre-popover.left-bottom .popover-arrow.top,
+.pre-popover.bottom-left .tooltip-arrow.top,
+.pre-popover.bottom-left .popover-arrow.top,
+.pre-popover.top-left .tooltip-arrow.top,
+.pre-popover.top-left .popover-arrow.top {
+    margin-top: 0;
+    top: 15%;
+}
+/*
+.pre-tooltip.left .tooltip-arrow.bottom, .left.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.left .popover-arrow.bottom,
+.left.pre-popover .popover-arrow.bottom, .pre-tooltip.left-top .tooltip-arrow.bottom, .left-top.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.left-top .popover-arrow.bottom,
+.left-top.pre-popover .popover-arrow.bottom, .pre-tooltip.left-bottom .tooltip-arrow.bottom, .left-bottom.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.left-bottom .popover-arrow.bottom,
+.left-bottom.pre-popover .popover-arrow.bottom, .pre-tooltip.bottom-left .tooltip-arrow.bottom, .bottom-left.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.bottom-left .popover-arrow.bottom,
+.bottom-left.pre-popover .popover-arrow.bottom, .pre-tooltip.top-left .tooltip-arrow.bottom, .top-left.pre-popover .tooltip-arrow.bottom,
+.pre-tooltip.top-left .popover-arrow.bottom,
+.top-left.pre-popover .popover-arrow.bottom,
+.pre-popover.left .tooltip-arrow.bottom,
+.pre-popover.left .popover-arrow.bottom,
+.pre-popover.left-top .tooltip-arrow.bottom,
+.pre-popover.left-top .popover-arrow.bottom,
+.pre-popover.left-bottom .tooltip-arrow.bottom,
+.pre-popover.left-bottom .popover-arrow.bottom,
+.pre-popover.bottom-left .tooltip-arrow.bottom,
+.pre-popover.bottom-left .popover-arrow.bottom,
+.pre-popover.top-left .tooltip-arrow.bottom,
+.pre-popover.top-left .popover-arrow.bottom {
+    bottom: 15%;
+    top: auto;
+}
+/*
+.pre-tooltip.left .tooltip-arrow:after, .left.pre-popover .tooltip-arrow:after,
+.pre-tooltip.left .popover-arrow:after,
+.left.pre-popover .popover-arrow:after, .pre-tooltip.left-top .tooltip-arrow:after, .left-top.pre-popover .tooltip-arrow:after,
+.pre-tooltip.left-top .popover-arrow:after,
+.left-top.pre-popover .popover-arrow:after, .pre-tooltip.left-bottom .tooltip-arrow:after, .left-bottom.pre-popover .tooltip-arrow:after,
+.pre-tooltip.left-bottom .popover-arrow:after,
+.left-bottom.pre-popover .popover-arrow:after, .pre-tooltip.bottom-left .tooltip-arrow:after, .bottom-left.pre-popover .tooltip-arrow:after,
+.pre-tooltip.bottom-left .popover-arrow:after,
+.bottom-left.pre-popover .popover-arrow:after, .pre-tooltip.top-left .tooltip-arrow:after, .top-left.pre-popover .tooltip-arrow:after,
+.pre-tooltip.top-left .popover-arrow:after,
+.top-left.pre-popover .popover-arrow:after,
+.pre-popover.left .tooltip-arrow:after,
+.pre-popover.left .popover-arrow:after,
+.pre-popover.left-top .tooltip-arrow:after,
+.pre-popover.left-top .popover-arrow:after,
+.pre-popover.left-bottom .tooltip-arrow:after,
+.pre-popover.left-bottom .popover-arrow:after,
+.pre-popover.bottom-left .tooltip-arrow:after,
+.pre-popover.bottom-left .popover-arrow:after,
+.pre-popover.top-left .tooltip-arrow:after,
+.pre-popover.top-left .popover-arrow:after {
+    right: 1px;
+    bottom: -12px;
+    border-left-color: #fff;
+    border-right-width: 0;
+}
+*/
+/**
+ * GitHub theme
+ *
+ * @author Craig Campbell
+ * @version 1.0.4
+ */
+pre {
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+    padding: 6px 10px;
+    line-height: 19px;
+    margin-bottom: 20px;
+}
+
+code {
+    border: 1px solid #eaeaea;
+    margin: 0 2px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+pre code {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+pre, code {
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    color: #333;
+    background: #f8f8f8;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+pre, pre code {
+    font-size: 13px;
+}
+
+pre .comment {
+    color: #998;
+}
+
+pre .support {
+    color: #0086B3;
+}
+
+pre .tag, pre .tag-name {
+    color: navy;
+}
+
+pre .keyword, pre .css-property, pre .vendor-prefix, pre .sass, pre .class, pre .id, pre .css-value, pre .entity.function, pre .storage.function {
+    font-weight: bold;
+}
+
+pre .css-property, pre .css-value, pre .vendor-prefix, pre .support.namespace {
+    color: #333;
+}
+
+pre .constant.numeric, pre .keyword.unit, pre .hex-color {
+    font-weight: normal;
+    color: #099;
+}
+
+pre .entity.class {
+    color: #458;
+}
+
+pre .entity.id, pre .entity.function {
+    color: #900;
+}
+
+pre .attribute, pre .variable {
+    color: teal;
+}
+
+pre .string, pre .support.value  {
+    font-weight: normal;
+    color: #d14;
+}
+
+pre .regexp {
+    color: #009926;
+}
+.link {
+    stroke: black;
+    fill: none;
+}
+
+.svg{
+    display: block;
+    margin: auto;
+}
+.link_continuous {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 2px;
+    stroke-dasharray: 20,10,5,5,5,10;
+}
+.link_dashed {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 2px;
+    stroke-dasharray: 20,10,5,5,5,10;
+}
+.link_dashed1{
+    fill: none;
+    stroke: black;
+    stroke-width: 2px;
+}
+.ArrowHead{
+
+    viewbox: "0 0 10 10";
+    refX=8;
+    refY=5;
+    markerUnits=strokeWidth
+    markerWidth=8
+    markerHeight=5
+    orient=auto
+    style="fill: white; stroke: black; stroke-width: 2px">
+    <path d="M50 0 L50 100 M50 50 L25 0 M50 50 L75 0 M25 75 L75 75"
+
+
+}
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+    stroke: #333;
+    fill: #fff;
+    stroke-width: 2px;
+}
+
+.edgePath path {
+    stroke: #333;
+    fill: #333;
+    stroke-width: 2px;
+}
+
+.path {
+    stroke: white;
+    fill: black;
+}
+.top{
+    position:absolute;
+    top:20px;
+}
+.breadcrumb {
+    display: inline-block;
+    background: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+.breadcrumb-wrapper {
+    position:fixed;
+    width:100%;
+    height: 40px;
+    margin-top:50px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e2e2e2;
+    z-index:200;
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.btn-linked a{
+    color: #fff;
+}
+/****** Navbar color styles - primary *********/
+
+ .navbar-a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+    vertical-align:middle;
+    display: inline-block;
+ }
+
+
+ .navbar-primary {
+     background-color: #286090;
+     border-color: #204d74 !important;
+ }
+
+
+     .navbar-primary .navbar-brand {
+         color: #e7e7e7;
+     }
+
+.navbar-brand, .login-body .navbar-brand {
+    background: url('assets/img/dmc-logo.png') no-repeat;
+    background-size: 321px 32px;
+    height: 32px;
+    width: 321px;
+    margin-top:8px;
+    margin-left: 22%;
+}
+
+
+         .navbar-primary .navbar-brand:hover,
+         .navbar-primary .navbar-brand:focus {
+             color: #fff;
+             background-color: transparent;
+         }
+
+
+     .navbar-primary .navbar-text {
+         color: #f7f7f7;
+     }
+
+
+     .navbar-primary .navbar-nav > li > a {
+         color: #f7f7f7;
+     }
+
+
+         .navbar-primary .navbar-nav > li > a:hover,
+         .navbar-primary .navbar-nav > li > a:focus {
+             color: #fff;
+             background-color: transparent;
+         }
+
+
+     .navbar-primary .navbar-nav > .active > a,
+     .navbar-primary .navbar-nav > .active > a:hover,
+     .navbar-primary .navbar-nav > .active > a:focus {
+         color: #fff;
+         background-color: #204d74;
+     }
+
+
+     .navbar-primary .navbar-nav > .disabled > a,
+     .navbar-primary .navbar-nav > .disabled > a:hover,
+     .navbar-primary .navbar-nav > .disabled > a:focus {
+         color: #ccc;
+         background-color: transparent;
+     }
+
+
+     .navbar-primary .navbar-toggle {
+         border-color: #fff;
+     }
+
+
+         .navbar-primary .navbar-toggle:hover,
+         .navbar-primary .navbar-toggle:focus {
+             background-color: #204d74;
+         }
+
+
+         .navbar-primary .navbar-toggle .icon-bar {
+             background-color: #fff;
+         }
+
+
+     .navbar-primary .navbar-collapse,
+     .navbar-primary .navbar-form {
+         border-color: #e7e7e7;
+     }
+
+
+     .navbar-primary .navbar-nav > .open > a,
+     .navbar-primary .navbar-nav > .open > a:hover,
+     .navbar-primary .navbar-nav > .open > a:focus {
+         color: #fff;
+         background-color: #204d74;
+     }
+
+
+ @media (max-width: 767px) {
+     .navbar-primary .navbar-nav .open .dropdown-menu > li > a {
+         color: #f7f7f7;
+     }
+
+
+         .navbar-primary .navbar-nav .open .dropdown-menu > li > a:hover,
+         .navbar-primary .navbar-nav .open .dropdown-menu > li > a:focus {
+             color: #fff;
+             background-color: transparent;
+         }
+
+
+     .navbar-primary .navbar-nav .open .dropdown-menu > .active > a,
+     .navbar-primary .navbar-nav .open .dropdown-menu > .active > a:hover,
+     .navbar-primary .navbar-nav .open .dropdown-menu > .active > a:focus {
+         color: #fff;
+         background-color: #204d74;
+     }
+
+
+     .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a,
+     .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+     .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+         color: #ccc;
+         background-color: transparent;
+     }
+ }
+
+
+ .navbar-primary .navbar-link {
+     color: #f7f7f7;
+ }
+
+
+     .navbar-primary .navbar-link:hover {
+         color: #fff;
+     }
+
+
+ .navbar-primary .btn-link {
+     color: #f7f7f7;
+ }
+
+
+     .navbar-primary .btn-link:hover,
+     .navbar-primary .btn-link:focus {
+         color: #fff;
+     }
+
+
+     .navbar-primary .btn-link[disabled]:hover,
+     fieldset[disabled] .navbar-primary .btn-link:hover,
+     .navbar-primary .btn-link[disabled]:focus,
+     fieldset[disabled] .navbar-primary .btn-link:focus {
+         color: #ccc;
+     }
