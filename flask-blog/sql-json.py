@@ -1,6 +1,7 @@
 from flask import Flask
 import sqlite3
 import json
+import pypyodbc
 
 DATABASE = 'C:\\BitBucket\\node.proxy.server\\flask-blog\\aaa.db'
 
