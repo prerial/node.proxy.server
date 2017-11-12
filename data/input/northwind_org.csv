@@ -1,0 +1,13 @@
+L1:employees
+L1L2C1:employeeterritories
+L1L2C1L3C1:territories
+L1L2C1L3C1L4C1:region
+L1L2C2:orders
+L1L2C2L3C1:Orderdetails
+L1L2C2L3C1L4C1:products
+L1L2C2L3C1L4C1L5C1:suppliers
+L1L2C2L3C1L4C1L5C2:categories
+L1L2C2L3C2:Customers
+L1L2C2L3C2L4C1:customercustomerdemo
+L1L2C2L3C2L5C1:customerdemographics
+L1L2C2L3C3:shippers

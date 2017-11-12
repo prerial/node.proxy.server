@@ -1,0 +1,23 @@
+{
+ "tables": [
+  "confidentialitylevels", 
+  "daf", 
+  "dafapprovals", 
+  "dafcomments", 
+  "dafcontacts", 
+  "dafelements", 
+  "dafprojectdetails", 
+  "dafsourcedefinition", 
+  "dafstatusref", 
+  "daftargetdefinitions", 
+  "dai_ingest_test", 
+  "datatypes", 
+  "deidentificationformats", 
+  "infotype", 
+  "jpusers", 
+  "locationtype", 
+  "projectdetails", 
+  "projectdomain", 
+  "targetenvironments"
+ ]
+}

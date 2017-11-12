@@ -1,0 +1,192 @@
+table_schema,table_name,column_name,ordinal_position,column_type,data_length,column_default,is_nullable,data_type,numeric_precision,numeric_scale,extra,index_name,referenced_table_schema,referenced_table_name,referenced_column_name,constraint_name,constraint_type
+daf,confidentialitylevels,confidentialitylevelid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,confidentialitylevels,confidentialitylevel,2,varchar(25),25,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daf,dafid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,daf,dafname,2,varchar(255),255,None,NO,varchar,None,None,,None,None,None,None,None,None
+daf,daf,dafassigneesid,3,char(7),7,None,NO,char,None,None,,None,None,None,None,None,None
+daf,daf,dafversion,4,int(11),None,None,NO,int,10,0,,None,None,None,None,None,None
+daf,daf,statusid,5,int(11),None,None,NO,int,10,0,,FK_dafStatus,daf,dafstatusref,statusid,FK_dafStatus,FOREIGN KEY
+daf,daf,transstartdate,6,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,daf,transenddate,7,datetime,None,None,NO,datetime,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,daf,addedby,8,char(7),7,None,NO,char,None,None,,Fk_daf_addedby,daf,jpusers,usersid,Fk_daf_addedby,FOREIGN KEY
+daf,daf,deletedby,9,char(7),7,None,YES,char,None,None,,FK_dafDelBy,daf,jpusers,usersid,FK_dafDelBy,FOREIGN KEY
+daf,dafapprovals,approvalid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafapprovals,dafid,2,bigint(20),None,None,NO,bigint,19,0,,FK_approval_dafId_idx,daf,daf,dafid,FK_approval_dafId,FOREIGN KEY
+daf,dafapprovals,approvalurlsourceio,3,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurlsourceriskmgr,4,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurlsourcelegal,5,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurljpmisdatareviewer,6,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurljpmisio,7,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurljpmisrisk,8,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalurljpmislegal,9,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,transstartdate,10,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,transenddate,11,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,addedby,12,char(7),7,None,NO,char,None,None,,FK,daf,jpusers,usersid,FK,FOREIGN KEY
+daf,dafapprovals,deletedby,13,char(7),7,None,YES,char,None,None,,FK1,daf,jpusers,usersid,FK1,FOREIGN KEY
+daf,dafapprovals,approvaldatesourceio,14,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatesourceriskmgr,15,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatesourcelegal,16,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatejpmisdatareviewer,17,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatejpmisio,18,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatejpmisrisk,19,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaldatejpmislegal,20,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvaluseridjpmisio,21,bigint(20),None,None,YES,bigint,19,0,,FK_jpmisio,daf,jpusers,id,FK_jpmisio,FOREIGN KEY
+daf,dafapprovals,approvaluseridjpmisdatareviewer,22,bigint(20),None,None,YES,bigint,19,0,,FK_jpmisReviewer,daf,jpusers,id,FK_jpmisReviewer,FOREIGN KEY
+daf,dafapprovals,approvaluseridjpmislegal,23,bigint(20),None,None,YES,bigint,19,0,,FK_jpmisLegal,daf,jpusers,id,FK_jpmisLegal,FOREIGN KEY
+daf,dafapprovals,approvaluseridjpmisrisk,24,bigint(20),None,None,YES,bigint,19,0,,FK_jpmisRisk,daf,jpusers,id,FK_jpmisRisk,FOREIGN KEY
+daf,dafapprovals,approvalconditionsourceio,25,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionsourceriskmgr,26,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionsourcelegal,27,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionjpmisdatareviewer,28,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionjpmisio,29,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionjpmisrisk,30,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafapprovals,approvalconditionjpmislegal,31,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafcomments,dafid,1,bigint(20),None,None,NO,bigint,19,0,,FK_comments_dafId_idx,daf,daf,dafid,FK_comments_dafId,FOREIGN KEY
+daf,dafcomments,commentid,2,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafcomments,commentbody,3,varchar(255),255,None,NO,varchar,None,None,,None,None,None,None,None,None
+daf,dafcomments,commentdate,4,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafcomments,addedby,5,char(7),7,None,NO,char,None,None,,FK_comments_addedBy_idx,daf,jpusers,usersid,FK_comments_addedBy,FOREIGN KEY
+daf,dafcomments,deletedby,6,char(7),7,None,YES,char,None,None,,FK_comments_delBy_idx,daf,jpusers,usersid,FK_comments_delBy,FOREIGN KEY
+daf,dafcomments,transstartdate,7,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafcomments,transenddate,8,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafcontacts,contactsid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafcontacts,dafid,2,bigint(20),None,None,NO,bigint,19,0,,FK_contacts_dafId,daf,daf,dafid,FK_contacts_dafId,FOREIGN KEY
+daf,dafcontacts,dafrequestorid,3,bigint(20),None,None,YES,bigint,19,0,,FK1_idx,daf,jpusers,id,FK_reqId,FOREIGN KEY
+daf,dafcontacts,jpmissponsorid,4,bigint(20),None,None,YES,bigint,19,0,,FK2_idx,daf,jpusers,id,FK_sponsor,FOREIGN KEY
+daf,dafcontacts,bussponsorid,5,bigint(20),None,None,YES,bigint,19,0,,FK3_idx,daf,jpusers,id,FK_bussponsor,FOREIGN KEY
+daf,dafcontacts,techcontactid,6,bigint(20),None,None,YES,bigint,19,0,,FK4_idx,daf,jpusers,id,FK_techid,FOREIGN KEY
+daf,dafcontacts,sourceioid,7,bigint(20),None,None,YES,bigint,19,0,,FK5_idx,daf,jpusers,id,FK_sourceIO,FOREIGN KEY
+daf,dafcontacts,sourceriskmgrid,8,bigint(20),None,None,YES,bigint,19,0,,FK6_idx,daf,jpusers,id,FK_sourcerisk,FOREIGN KEY
+daf,dafcontacts,sourcelegalid,9,bigint(20),None,None,YES,bigint,19,0,,FK7_idx,daf,jpusers,id,FK_legal,FOREIGN KEY
+daf,dafcontacts,transstartdate,10,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafcontacts,transenddate,11,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafcontacts,addedby,12,char(7),7,None,NO,char,None,None,,FK_addedBy,daf,jpusers,usersid,FK_addedBy,FOREIGN KEY
+daf,dafcontacts,deletedby,13,char(7),7,None,YES,char,None,None,,FK_deletedBy,daf,jpusers,usersid,FK_deletedBy,FOREIGN KEY
+daf,dafelements,dafid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafelements,dafid,1,bigint(20),None,None,NO,bigint,19,0,,FK_elements_dafId,daf,daf,dafid,FK_elements_dafId,FOREIGN KEY
+daf,dafelements,dafid,1,bigint(20),None,None,NO,bigint,19,0,,FK_elements_dafId_idx,daf,daf,dafid,FK_elements_dafId,FOREIGN KEY
+daf,dafelements,elementid,2,bigint(20),None,None,NO,bigint,19,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafelements,elementname,3,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafelements,elementispi,4,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafelements,elementorderindex,5,int(11),None,None,YES,int,10,0,,None,None,None,None,None,None
+daf,dafelements,elementdescription,6,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafelements,canbeusedtoidentifypi,7,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafelements,canbecombinedtoidentifypi,8,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafelements,elementcomment,9,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafelements,elementglobalidscantime,10,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dafelements,elementconfidentialitylevelid,11,bigint(20),None,None,YES,bigint,19,0,,FK_elements_confLevel_idx,daf,confidentialitylevels,confidentialitylevelid,FK_elements_confLevel,FOREIGN KEY
+daf,dafelements,elementdatatypeid,12,bigint(20),None,None,YES,bigint,19,0,,FK_elements_datatypeId_idx,daf,datatypes,datatypeid,FK_elements_datatypeId,FOREIGN KEY
+daf,dafelements,elementinfotypeid,13,bigint(20),None,None,YES,bigint,19,0,,FK_element_infoId_idx,daf,infotype,infotypeid,FK_element_infoId,FOREIGN KEY
+daf,dafelements,elementdeidentificationformatid,14,bigint(20),None,None,YES,bigint,19,0,,FK_elements_formatId_idx,daf,deidentificationformats,deidentificationformatid,FK_elements_formatId,FOREIGN KEY
+daf,dafelements,transstartdate,15,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafelements,transenddate,16,datetime,None,None,NO,datetime,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafelements,addedby,17,char(7),7,None,NO,char,None,None,,FK_elements_addedBy_idx,daf,jpusers,usersid,FK_elements_addedBy,FOREIGN KEY
+daf,dafelements,deletedby,18,char(7),7,None,YES,char,None,None,,FK_elements_delBy_idx,daf,jpusers,usersid,FK_elements_delBy,FOREIGN KEY
+daf,dafprojectdetails,dafprojectid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafprojectdetails,dafid,2,bigint(20),None,None,NO,bigint,19,0,,FK_proj_dafId_idx,daf,daf,dafid,FK_proj_dafId,FOREIGN KEY
+daf,dafprojectdetails,domainid,3,int(20),None,None,YES,int,10,0,,FK_proj_domain_idx,daf,projectdomain,domainid,FK_proj_domainId,FOREIGN KEY
+daf,dafprojectdetails,projectid,4,int(20),None,None,YES,int,10,0,,FK_proj_projId_idx,daf,projectdetails,projectid,FK_proj_projId,FOREIGN KEY
+daf,dafprojectdetails,projectdatadescription,5,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafprojectdetails,projectbusinesscase,6,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafprojectdetails,addedby,7,char(7),7,None,NO,char,None,None,,FK_proj_addedBy_idx,daf,jpusers,usersid,FK_proj_addedBy,FOREIGN KEY
+daf,dafprojectdetails,deletedby,8,char(7),7,None,YES,char,None,None,,FK_proj_delBy_idx,daf,jpusers,usersid,FK_proj_delBy,FOREIGN KEY
+daf,dafprojectdetails,transstartdate,9,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafprojectdetails,transenddate,10,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,dafid,1,bigint(20),None,None,NO,bigint,19,0,,Fk_source_dafId_idx,daf,daf,dafid,Fk_source_dafId,FOREIGN KEY
+daf,dafsourcedefinition,sourceid,2,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafsourcedefinition,sourcename,3,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcehostname,4,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourceenvironmentid,5,bigint(20),None,None,YES,bigint,19,0,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcelob,6,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcelocation,7,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcetablename,8,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcefiletype,9,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcefilesize,10,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourceplatform,11,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcedatadictionary,12,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcesealcode,13,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,issourcesensitive,14,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,issourcenonus,15,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,issourcethirdparty,16,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,issourcemnpi,17,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,issourceinternal,18,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourcelocationtypeid,19,bigint(20),None,None,YES,bigint,19,0,,None,None,None,None,None,None
+daf,dafsourcedefinition,transstartdate,20,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,transenddate,21,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,addedby,22,char(7),7,None,NO,char,None,None,,FK_source_addedBy_idx,daf,jpusers,usersid,FK_source_addedBy,FOREIGN KEY
+daf,dafsourcedefinition,deletedby,23,char(7),7,None,YES,char,None,None,,FK_source_delBy_idx,daf,jpusers,usersid,FK_source_delBy,FOREIGN KEY
+daf,dafsourcedefinition,sourcejoinsandfilters,24,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafsourcedefinition,sourceotherinstructions,25,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dafstatusref,statusid,1,int(11),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dafstatusref,statustext,2,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,dafid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,daftargetdefinitions,dafid,1,bigint(20),None,None,NO,bigint,19,0,,FK_target_dafId,daf,daf,dafid,FK_target_dafId,FOREIGN KEY
+daf,daftargetdefinitions,dafid,1,bigint(20),None,None,NO,bigint,19,0,,FK_target_dafId_idx,daf,daf,dafid,FK_target_dafId,FOREIGN KEY
+daf,daftargetdefinitions,targetid,2,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,daftargetdefinitions,targetname,3,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetenvironmentid,4,int(20),None,None,YES,int,10,0,,FK_target_envId_idx,daf,targetenvironments,environmentid,FK_target_envId,FOREIGN KEY
+daf,daftargetdefinitions,targethostname,5,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetlocationtypeid,6,bigint(20),None,None,YES,bigint,19,0,,FK_target_locId_idx,daf,locationtype,locationtypeid,FK_target_locId,FOREIGN KEY
+daf,daftargetdefinitions,targettablename,7,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetfiletype,8,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetplatform,9,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetjoinlogic,10,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetaccessroles,11,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetclaritycode,12,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targethistoryrequirement,13,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetretentionrequirement,14,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetrccrequirement,15,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetupdatefrequency,16,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetsla,17,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetdeliverydatereq,18,date,None,None,YES,date,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetsampledeliverydatereq,19,date,None,None,YES,date,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,istargetenvironmentapproved,20,bit(1),None,None,YES,bit,1,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,transstartdate,21,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,transenddate,22,datetime,None,None,NO,datetime,None,None,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,daftargetdefinitions,addedby,23,char(7),7,None,NO,char,None,None,,FK_target_addedBy_idx,daf,jpusers,usersid,FK_target_addedBy,FOREIGN KEY
+daf,daftargetdefinitions,deletedby,24,char(7),7,None,YES,char,None,None,,FK_target_delBy_idx,daf,jpusers,usersid,FK_target_delBy,FOREIGN KEY
+daf,daftargetdefinitions,targetsealid,25,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetbusinessjustification,26,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,daftargetdefinitions,targetlocation,27,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,id,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,dai_ingest_test,jnumber,2,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,faddress,3,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,project,4,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,ssystem,5,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,stable,6,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,dafon,7,bigint(20),None,None,NO,bigint,19,0,,None,None,None,None,None,None
+daf,dai_ingest_test,dafor,8,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,jpmisor,9,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,busor,10,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,boal,11,datetime,None,None,YES,datetime,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,recs,12,varchar(10),10,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,elnt,13,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,targetnt,14,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,dai_ingest_test,jirak,15,varchar(500),500,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,datatypes,datatypeid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,datatypes,datatypename,2,varchar(25),25,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,deidentificationformats,deidentificationformatid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,deidentificationformats,deidentificationformatname,2,varchar(25),25,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,infotype,infotypeid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,infotype,infotypename,2,varchar(25),25,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,jpusers,usersid,1,char(7),7,None,YES,char,None,None,,r_uniqsid,None,None,None,r_uniqsid,UNIQUE
+daf,jpusers,username,2,varchar(55),55,None,NO,varchar,None,None,,None,None,None,None,None,None
+daf,jpusers,useremail,3,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,jpusers,usertitle,4,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,jpusers,userfunctionaltitle,5,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,jpusers,transstartdate,6,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,jpusers,transenddate,7,datetime,None,None,NO,datetime,None,None,,None,None,None,None,None,None
+daf,jpusers,addedby,8,char(7),7,None,YES,char,None,None,,None,None,None,None,None,None
+daf,jpusers,deletedby,9,char(7),7,None,YES,char,None,None,,None,None,None,None,None,None
+daf,jpusers,id,10,bigint(20),None,None,NO,bigint,19,0,auto_increment,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,locationtype,locationtypeid,1,bigint(20),None,None,NO,bigint,19,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,locationtype,locationtypename,2,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,projectdetails,projectid,1,int(20),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,projectdetails,projectname,2,varchar(255),255,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,projectdetails,projectclaritycode,3,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,projectdetails,projectmanagername,4,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,projectdomain,domainid,1,int(20),None,0,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,projectdomain,projectdomainname,2,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,projectdomain,projectsubdomainname,3,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
+daf,targetenvironments,environmentid,1,int(20),None,None,NO,int,10,0,,PRIMARY,None,None,None,PRIMARY,PRIMARY KEY
+daf,targetenvironments,environmentname,2,varchar(55),55,None,YES,varchar,None,None,,None,None,None,None,None,None
