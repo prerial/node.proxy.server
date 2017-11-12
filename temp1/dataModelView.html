@@ -2,22 +2,35 @@
     <form name="anchorsForm" novalidate class="form-horizontal" ng-submit="$ctrl.submitForm(source)">
     <div style="float:right;margin-top:8px;">
         <label style="margin-right:12px">Select Tables: </label>
-        <label style="margin-right:8px;font-weight:500"><input type="radio" ng-model="$ctrl.anchoroot.type" value="anchor"> Anchor</label>
-        <label style="margin-right:8px;font-weight:500"><input type="radio" ng-model="$ctrl.anchoroot.type" value="include"> Include</label>
-        <label style="margin-right:8px;font-weight:500"><input type="radio" ng-model="$ctrl.anchoroot.type" value="exclude"> Exclude</label>
+        <div style="margin-right:2px;display:inline-block;border-radius:2px;background-color:rgb(255,153,153);height:12px;width:12px"></div>
+        <label style="margin-right:8px;font-weight:500;"><input style="background-color:rgb(255,153,153);" type="radio" ng-model="$ctrl.anchoroot.type" value="anchor">
+             Anchor</label>
+        <div style="margin-right:2px;display:inline-block;border-radius:2px;background-color:rgb(144, 238, 144);height:12px;width:12px"></div>
+        <label style="margin-right:8px;font-weight:500;"><input style="background-color:rgb(144, 238, 144);" type="radio" ng-model="$ctrl.anchoroot.type" value="include">
+
+             Include</label>
+        <div style="margin-right:2px;display:inline-block;border-radius:2px;background-color:rgb(176, 196, 222);height:12px;width:12px"></div>
+        <label style="margin-right:8px;font-weight:500;"><input style="background-color:rgb(176, 196, 222);" type="radio" ng-model="$ctrl.anchoroot.type" value="exclude">
+             Exclude</label>
         <button ng-disabled="!anchorsForm.$valid" type="submit" class="btn btn-xs btn-primary">Submit</button>
         <button type="button" ng-click="$ctrl.resetAnchorsForm()" class="btn btn-xs btn-primary">Reset</button>
     </div>
     </form>
 </div>
 <div id="table-container">
-    <header><h4 style="display: inline;border:0 solid red">Table View</h4><div style="font-weight:bold;float:right;cursor:pointer" ng-click="$ctrl.hideTableView()">x</div></header>
+    <header><div style="display: inline;border:0 solid red" class="table-title">Table view</div>
+        <button type="button" class="close" aria-label="Close" ng-click="$ctrl.hideTableView()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+<!--        <div style="font-weight:bold;float:right;cursor:pointer" ng-click="$ctrl.hideTableView()">x</div> -->
+    </header>
     <hr/>
     <div id="table-header" style="display: inline;margin:0;border:1px solid transparent">
-        <input style="float:left" id="table-selection" type="checkbox" ng-click="$ctrl.toggleBackground1($event)" value="false"/>
+        <input style="float:left" id="table-selection" type="checkbox" ng-click="$ctrl.toggleBackground1($event)"/> Select
         <button style="float:right" class="btn btn-xs btn-primary" ng-click="$ctrl.showEdit($event)">Edit</button>
     </div>
     <hr/>
+    <input style="float:left;margin-right:4px;display:none;" id="field-select-all" type="checkbox" ng-click="$ctrl.toggleSelection($event)" checked />
     <div id="table-title"></div>
     <ul id="table-fields" class="list-group"></ul>
 </div>
