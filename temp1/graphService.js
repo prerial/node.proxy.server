@@ -1,9 +1,10 @@
 (function() {
     "use strict";
     angular.module('app.dmc').factory('GraphService', ['$rootScope', '$timeout',
-        function($rootScope, $timeout) {
+        function($rootScope) {
 
             var self = this;
+            this.fillColors = {};
 
             var margin = {top: 20, right: 120, bottom: 20, left: 120},
                 width = 1960 - margin.right - margin.left,
@@ -12,7 +13,7 @@
             var tree, diagonal, i = 0, duration = 750, root, svg;
 
             // Toggle children on click.
-            function click(d) {
+            function toggleCollapse(d) {
                 if (d.children) {
                     d._children = d.children;
                     d.children = null;
@@ -20,6 +21,7 @@
                     d.children = d._children;
                     d._children = null;
                 }
+                $rootScope.$broadcast('toggleCollapse');
                 update(d);
             }
 
@@ -51,7 +53,8 @@
  //                   .on("click", click);
                 nodeEnter.append("circle")
                     .attr("r", 1e-6)
-                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+                    .on("click", toggleCollapse);
                 nodeEnter.append("text")
                     .attr("x", function(d) { return d.children || d._children ? -8 : 8; })
                     .attr("dy", ".35em")
@@ -59,19 +62,19 @@
                     .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
                     .attr("class", "unselectable")
                     .text(function(d) { return d.name; })
+                    .style("fill", function(d) { return d.color ? self.fillColors[d.color]: "black"; })
                     .style("font-weight", "bold")
                     .style("fill-opacity", 1e-6)
                     .on("dblclick", function(nodeObj){
                         var el = $(d3.select(this)[0][0]);
-                        $rootScope.$broadcast('hideTable', el, nodeObj.name);
+                        $rootScope.$broadcast('hideTable', el, nodeObj);
                    })
                     .on("click", function(nodeObj){
                         var el = $(d3.select(this)[0][0]);
                         $rootScope.$broadcast('showTable', el, nodeObj);
                     })
                     .on({
-                        "mouseover": function(nodeObj) {
-                            var el = $(d3.select(this)[0][0]);
+                        "mouseover": function() {
                             d3.select(this).style("cursor", "pointer");
                         },
                         "mouseout": function() {
@@ -137,45 +140,31 @@
                 });
             }
 
+            function setColors(colors) {
+                self.fillColors = colors;
+            }
+
             function buildGraph(erData, blnTranslate) {
                 initialize();
                 root = erData[0];
                 root.x0 = height / 2;
                 root.y0 = 0;
+/*
                 function collapse(d) {
                     if (d.children) {
-        /*
                         d._children = d.children;
                         d._children.forEach(collapse);
                         d.children = null;
-        */
                     }
                 }
                 root.children.forEach(collapse);
+*/
                 update(root);
-                function setStatic(){
-                    dashed.forEach(function(mem){
-                        $(mem).css('display', 'none');
-                    });
-                    var left = 100;
-                    nodes.forEach(function(mem){
-                        var tr = 'translate(' + left + ',80)';
-                        $(mem).attr('transform', tr);
-                        left = left + 200;
-                    });
-                    $(nodes[nodes.length - 1]).css('display', 'none');
-                    $('#erDiagram').css('visibility','visible').css('width', nodes.length * 300);
-                    $('#erDiagram svg').attr('width', nodes.length * 300);
-                    $('#erDiagram svg').css('width', nodes.length * 300);
-                }
-                if(blnTranslate){
-                    $('#erDiagram').css('visibility','hidden');
-                    $timeout(setStatic, 1000);
-                }
             }
 
             return {
-                buildGraph: buildGraph
+                buildGraph: buildGraph,
+                setColors: setColors
             };
 
     }]);

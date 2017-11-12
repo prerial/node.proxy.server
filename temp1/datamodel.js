@@ -6,22 +6,23 @@
         controller: 'DataModelController'
 
     });
-    angular.module('app.dmc').controller('DataModelController', ['$scope', '$location', '$timeout', 'notificationService', 'Urls', 'UtilsService', 'messageService', 'CommonRequestService', 'GraphService',
-        function($scope, $location, $timeout, notification, urls, utilsService, messageService, commonRequestService, graphService) {
+    angular.module('app.dmc').controller('DataModelController', ['$scope', '$location', '$timeout', 'notificationService', 'UtilsService', 'messageService', 'CommonRequestService', 'GraphService',
+        function($scope, $location, $timeout, notification, utilsService, messageService, commonRequestService, graphService) {
 
             var self = this;
             this.dblclicked = false;
+            this.selectedEl = undefined;
             this.selectedNode = undefined;
             this.data = [];
             this.anchors = [];
             var fillColors = {
-                "default": "#444",
+                "default": "black",
                 "anchor": "darkred",
                 "include": "darkgreen",
                 "exclude": "darkblue"
             };
             var backgroundColors = {
-                "default": "rgb(239,239,239)",
+                "default": "rgb(239, 239, 239)",
                 "anchor": "rgb(255,153,153)",
                 "include": "rgb(144, 238, 144)",
                 "exclude": "rgb(176, 196, 222)"
@@ -60,25 +61,41 @@
                     return 'anchors=' + this.tables_anchor[0] + '&tables_include=' + this.tables_include[0] + '&tables_exclude=' + this.tables_exclude[0];
                 }
             };
-            $scope.$on('hideTable', function(evt, el, name){
+
+            $scope.$on('toggleCollapse', function(){
+                self.hideTableView();
+            });
+
+            $scope.$on('hideTable', function(evt, el, node){
                 self.dblclicked = true;
                 el.attr("unselectable", "on");
-                makeUnselectable(el[0]);
+                utilsService.makeUnselectable(el[0]);
                 var anchor = self.anchoroot.type;
                 el.css('fill', fillColors[self.anchoroot.type]);
+                node['color'] = self.anchoroot.type;
                 self.hideTableView();
                 $timeout(function(){
                     self.dblclicked = false;
-                }, 500)
+                }, 500);
+                self.setAnchors(node['name'], true);
             });
             $scope.$on('showTable', function(evt, el, node){
-                self.selectedNode = el;
+                self.selectedEl = el;
+                self.selectedNode = node;
                 $timeout(function(){
                     if(!self.dblclicked){
-                        $('#table-container').css('display', 'block').css('top', node.x-20).css('left', node.y).css('background-color', '#efefef');
+                        if(node['color']){
+                            $('#table-container').css('background-color', backgroundColors[node['color']]);
+                            node['color'] === 'default'?$('#table-selection')[0].checked =  false:$('#table-selection')[0].checked =  true;
+                        }else{
+                            node['color'] = 'default';
+                            $('#table-container').css('background-color', backgroundColors['default'])
+                            $('#table-selection')[0].checked = false;
+                        }
+                        $('#table-container').css('transition', 'all 800ms').css('display', 'block').css('top', node.x-20).css('left', node.y);
                         $('#table-title').html(node.name);
                         $('#table-fields').html('');
-                        $('#table-header button').html('Edit')
+                        $('#table-header button').html('Edit');
                         node.columns.forEach(function(item){
                             var chk = $('<input id="item.name" type="checkbox" checked/>');
                             var li = $('<li class="list-group-item"></li>');
@@ -86,7 +103,8 @@
                             li.append(chk).append(title);
                             $('#table-fields').append(li);
                         });
-                        $('#table-selection')[0].checked = false;
+                        $('#field-select-all').hide();
+                        $('#field-select-all')[0].checked = true;
                     }
                 }, 500)
             });
@@ -94,47 +112,43 @@
                 var el = evt.target;
                 if($(el).html() === 'Edit'){
                     $('#table-fields li input').show();
+                    $('#field-select-all').show();
                     $(el).html('Done');
                 }else{
                     $('#table-fields li input').hide();
+                    $('#field-select-all').hide();
                     $(el).html('Edit')
                 }
+            };
+            this.toggleSelection = function(evt){
+                var arr = $('#table-fields li input');
+                var checked = $('#field-select-all')[0].checked;
+                arr.each(function(idx, chk){
+                    chk.checked = checked;
+                });
             };
             this.hideTableView = function () {
                 $('#table-container').css('display', 'none');
             };
 
-            function makeUnselectable(node) {
-                if (node.nodeType === 1) {
-                    node.setAttribute("unselectable", "on");
-                }
-                var child = node.firstChild;
-                while (child) {
-                    makeUnselectable(child);
-                    child = child.nextSibling;
-                }
-            }
-
             this.toggleBackground1 = function (evt) {
                 var selected = $(evt.target)[0].checked;
                 var el = $('#table-container');
                 var blnAdd = false;
-/*
-                el.css('background-color') === 'rgb(176, 196, 222)'? el.css('background-color','rgb(144, 238, 144)') : el.css('background-color','rgb(176, 196, 222)');
-                if(el.css('background-color') === 'rgb(144, 238, 144)'){
-                    blnAdd = true;
-                }
-*/
                 if(selected){
-                    $(self.selectedNode).css('fill', fillColors[self.anchoroot.type]);
+                    $(self.selectedEl).css('fill', fillColors[self.anchoroot.type]);
+                    $(self.selectedNode).attr('color', self.anchoroot.type);
                     el.css('background-color', backgroundColors[self.anchoroot.type]);
+                    blnAdd = true;
                 }else{
-                    $(self.selectedNode).css('fill', fillColors['default']);
+                    $(self.selectedEl).css('fill', fillColors['default']);
+                    $(self.selectedNode).attr('color', 'default');
                     el.css('background-color', backgroundColors['default']);
                 }
+                self.setAnchors(self.selectedNode['name'], blnAdd);
             };
 
-            $scope.$on('setAnchors', function(evt, anchor, blnAdd){
+            this.setAnchors = function(anchor, blnAdd){
                 if(blnAdd){
                     Object.defineProperty(self.anchoroot[self.anchoroot.type], anchor, {
                         writable: true,
@@ -145,8 +159,8 @@
                 }else{
                     delete self.anchoroot[self.anchoroot.type][anchor];
                 }
-                $scope.$apply();
-             });
+//                $scope.$apply();
+             };
 
             utilsService.showSpinner();
 
@@ -179,9 +193,10 @@
                     self.resetAnchorsForm();
                     var erData = resp.data.payload;
                     $timeout(function(){
+                        graphService.setColors(fillColors);
                         graphService.buildGraph(erData, false);
                         utilsService.hideSpinner();
-                    },500);
+                   },500);
                 }).catch( function(msg){
                     $timeout(function() { $scope.expired = true; }, 5000);
                     notification.error('Error: ' + msg.responseText);
