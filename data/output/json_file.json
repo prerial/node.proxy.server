@@ -1,0 +1,1835 @@
+[
+ {
+  "namespace": "daf.confidentialitylevels", 
+  "name": "confidentialitylevels", 
+  "columns": [
+   {
+    "name": "confidentialitylevelid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "confidentialitylevel", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "25"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.daf", 
+  "name": "daf", 
+  "columns": [
+   {
+    "name": "dafid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "dafassigneesid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "dafversion", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "11"
+   }, 
+   {
+    "name": "statusid", 
+    "referencedColumnName": "statusid", 
+    "referencedTableName": "dafstatusref", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "11"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "datetime", 
+    "primaryKey": "true", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafapprovals", 
+  "name": "dafapprovals", 
+  "columns": [
+   {
+    "name": "approvalid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "approvalurlsourceio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurlsourceriskmgr", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurlsourcelegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurljpmisdatareviewer", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurljpmisio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurljpmisrisk", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalurljpmislegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "approvaldatesourceio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatesourceriskmgr", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatesourcelegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatejpmisdatareviewer", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatejpmisio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatejpmisrisk", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaldatejpmislegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "approvaluseridjpmisio", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "approvaluseridjpmisdatareviewer", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "approvaluseridjpmislegal", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "approvaluseridjpmisrisk", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "approvalconditionsourceio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionsourceriskmgr", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionsourcelegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionjpmisdatareviewer", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionjpmisio", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionjpmisrisk", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "approvalconditionjpmislegal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafcomments", 
+  "name": "dafcomments", 
+  "columns": [
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "commentid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "commentbody", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "commentdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafcontacts", 
+  "name": "dafcontacts", 
+  "columns": [
+   {
+    "name": "contactsid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafrequestorid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "jpmissponsorid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "bussponsorid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "techcontactid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourceioid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourceriskmgrid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourcelegalid", 
+    "referencedColumnName": "id", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafelements", 
+  "name": "dafelements", 
+  "columns": [
+   {
+    "name": "dafid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "elementid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "elementname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "elementispi", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "elementorderindex", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "11"
+   }, 
+   {
+    "name": "elementdescription", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "canbeusedtoidentifypi", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "canbecombinedtoidentifypi", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "elementcomment", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "elementglobalidscantime", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "elementconfidentialitylevelid", 
+    "referencedColumnName": "confidentialitylevelid", 
+    "referencedTableName": "confidentialitylevels", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "elementdatatypeid", 
+    "referencedColumnName": "datatypeid", 
+    "referencedTableName": "datatypes", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "elementinfotypeid", 
+    "referencedColumnName": "infotypeid", 
+    "referencedTableName": "infotype", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "elementdeidentificationformatid", 
+    "referencedColumnName": "deidentificationformatid", 
+    "referencedTableName": "deidentificationformats", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "datetime", 
+    "primaryKey": "true", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafprojectdetails", 
+  "name": "dafprojectdetails", 
+  "columns": [
+   {
+    "name": "dafprojectid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "domainid", 
+    "referencedColumnName": "domainid", 
+    "referencedTableName": "projectdomain", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "projectid", 
+    "referencedColumnName": "projectid", 
+    "referencedTableName": "projectdetails", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "projectdatadescription", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "projectbusinesscase", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafsourcedefinition", 
+  "name": "dafsourcedefinition", 
+  "columns": [
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourceid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourcename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcehostname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourceenvironmentid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "sourcelob", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcelocation", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcetablename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcefiletype", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcefilesize", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourceplatform", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "sourcedatadictionary", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "sourcesealcode", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "issourcesensitive", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "issourcenonus", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "issourcethirdparty", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "issourcemnpi", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "issourceinternal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "sourcelocationtypeid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "sourcejoinsandfilters", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "sourceotherinstructions", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dafstatusref", 
+  "name": "dafstatusref", 
+  "columns": [
+   {
+    "name": "statusid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "int", 
+    "primaryKey": "true", 
+    "size": "11"
+   }, 
+   {
+    "name": "statustext", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.daftargetdefinitions", 
+  "name": "daftargetdefinitions", 
+  "columns": [
+   {
+    "name": "dafid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafid", 
+    "referencedColumnName": "dafid", 
+    "referencedTableName": "daf", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "targetid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "targetname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetenvironmentid", 
+    "referencedColumnName": "environmentid", 
+    "referencedTableName": "targetenvironments", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "int", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "targethostname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetlocationtypeid", 
+    "referencedColumnName": "locationtypeid", 
+    "referencedTableName": "locationtype", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "targettablename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetfiletype", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetplatform", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetjoinlogic", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "targetaccessroles", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetclaritycode", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targethistoryrequirement", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetretentionrequirement", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetrccrequirement", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetupdatefrequency", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetsla", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetdeliverydatereq", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "date", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "targetsampledeliverydatereq", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "date", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "istargetenvironmentapproved", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bit", 
+    "primaryKey": "false", 
+    "size": "1"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "datetime", 
+    "primaryKey": "true", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "usersid", 
+    "referencedTableName": "jpusers", 
+    "constraintType": "FOREIGN KEY", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "targetsealid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "targetbusinessjustification", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "targetlocation", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.dai_ingest_test", 
+  "name": "dai_ingest_test", 
+  "columns": [
+   {
+    "name": "id", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "jnumber", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "faddress", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "project", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "ssystem", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "stable", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "dafon", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "bigint", 
+    "primaryKey": "false", 
+    "size": "20"
+   }, 
+   {
+    "name": "dafor", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "jpmisor", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "busor", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "boal", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "recs", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "10"
+   }, 
+   {
+    "name": "elnt", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "targetnt", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }, 
+   {
+    "name": "jirak", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "500"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.datatypes", 
+  "name": "datatypes", 
+  "columns": [
+   {
+    "name": "datatypeid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "datatypename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "25"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.deidentificationformats", 
+  "name": "deidentificationformats", 
+  "columns": [
+   {
+    "name": "deidentificationformatid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "deidentificationformatname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "25"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.infotype", 
+  "name": "infotype", 
+  "columns": [
+   {
+    "name": "infotypeid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "infotypename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "25"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.jpusers", 
+  "name": "jpusers", 
+  "columns": [
+   {
+    "name": "usersid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "UNIQUE", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "username", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "useremail", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "usertitle", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "userfunctionaltitle", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "transstartdate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "transenddate", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "datetime", 
+    "primaryKey": "false", 
+    "size": 0
+   }, 
+   {
+    "name": "addedby", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "deletedby", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "char", 
+    "primaryKey": "false", 
+    "size": "7"
+   }, 
+   {
+    "name": "id", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.locationtype", 
+  "name": "locationtype", 
+  "columns": [
+   {
+    "name": "locationtypeid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "bigint", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "locationtypename", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.projectdetails", 
+  "name": "projectdetails", 
+  "columns": [
+   {
+    "name": "projectid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "int", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "projectname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "255"
+   }, 
+   {
+    "name": "projectclaritycode", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "projectmanagername", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.projectdomain", 
+  "name": "projectdomain", 
+  "columns": [
+   {
+    "name": "domainid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "int", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "projectdomainname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }, 
+   {
+    "name": "projectsubdomainname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }, 
+ {
+  "namespace": "daf.targetenvironments", 
+  "name": "targetenvironments", 
+  "columns": [
+   {
+    "name": "environmentid", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "PRIMARY KEY", 
+    "type": "int", 
+    "primaryKey": "true", 
+    "size": "20"
+   }, 
+   {
+    "name": "environmentname", 
+    "referencedColumnName": "No", 
+    "referencedTableName": "No", 
+    "constraintType": "No", 
+    "type": "varchar", 
+    "primaryKey": "false", 
+    "size": "55"
+   }
+  ]
+ }
+]

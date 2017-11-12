@@ -1,0 +1,194 @@
+db_type,db,DATABASE TYPE,HIVE/IMPALA DATA TYPES,width,scale,Flag
+SYBASE,bigint,HIVE-IMPALA,bigint,,,N
+SYBASE,int,HIVE-IMPALA,int,,,N
+SYBASE,smallint,HIVE-IMPALA,smallint,,,N
+SYBASE,tinyint,HIVE-IMPALA,tinyint,,,N
+SYBASE,unsigned bigint,HIVE-IMPALA,bigint,,,N
+SYBASE,unsigned int,HIVE-IMPALA,int,,,N
+SYBASE,unsigned smallint,HIVE-IMPALA,smallint,,,N
+SYBASE,unsigned tinyint ,HIVE-IMPALA,tinyint,,,N
+SYBASE,decimal,HIVE-IMPALA,decimal,38,18,Y
+SYBASE,numeric,HIVE-IMPALA,decimal,38,18,Y
+SYBASE,float,HIVE-IMPALA,float,,,N
+SYBASE,real,HIVE,float,,,N
+SYBASE,real,IMPALA,real,,,N
+SYBASE,char,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,varchar,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,text,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,money,HIVE-IMPALA,money -- Not Found,,,N
+SYBASE,smallmoney,HIVE-IMPALA,smallmoney -- Not Found,,,N
+SYBASE,datetime,HIVE-IMPALA,timestamp,,,N
+SYBASE,smalldatetime ,HIVE-IMPALA,timestamp,,,N
+SYBASE,date,IMPALA,timestamp,,,N
+SYBASE,date,HIVE,date,,,N
+SYBASE,time,HIVE-IMPALA,timestamp,,,N
+SYBASE,bigtime,HIVE-IMPALA,timestamp,,,N
+SYBASE,bigdatetime,HIVE-IMPALA,timestamp,,,N
+SYBASE,timestamp,HIVE-IMPALA,timestamp,,,N
+SYBASE,binary,HIVE-IMPALA,binary,,,N
+SYBASE,varbinary,HIVE-IMPALA,binary,,,N
+SYBASE,image,HIVE-IMPALA,image --Not Found,,,N
+SYBASE,rawobject,HIVE-IMPALA,rawobject --Not Found,,,N
+SYBASE,bit,HIVE-IMPALA,int,,,N
+SYBASE,unichar,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,univarchar,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,unitext,HIVE-IMPALA,varchar,65535,0,Y
+SYBASE,integer,HIVE-IMPALA,int,,,N
+ORACLE,binary_integer,HIVE-IMPALA,int,,,N
+ORACLE,dec,HIVE-IMPALA,decimal,38,18,Y
+ORACLE,decimal,HIVE-IMPALA,decimal,38,18,Y
+ORACLE,double precision,HIVE-IMPALA,double precision --Not Found,,,N
+ORACLE,float,HIVE-IMPALA,float,,,N
+ORACLE,int,HIVE-IMPALA,int,,,N
+ORACLE,integer,HIVE-IMPALA,int,,,N
+ORACLE,natural,HIVE-IMPALA,natural --Not Found,,,N
+ORACLE,naturaln,HIVE-IMPALA,naturaln --Not Found,,,N
+ORACLE,int,HIVE-IMPALA,int,,,N
+ORACLE,number_int,HIVE-IMPALA,int,,,N
+ORACLE,number,HIVE-IMPALA,decimal,38,18,Y
+ORACLE,numeric,HIVE-IMPALA,int,,,N
+ORACLE,pls_integer,HIVE-IMPALA,int,,,N
+ORACLE,positive,HIVE-IMPALA,positive --Not Found,,,N
+ORACLE,positiven,HIVE-IMPALA,positiven --Not Found,,,N
+ORACLE,real,HIVE,float,,,N
+ORACLE,real,IMPALA,real,,,N
+ORACLE,signtype,HIVE-IMPALA,signtype --Not Found,,,N
+ORACLE,smallint,HIVE-IMPALA,smallint,,,Y
+ORACLE,char,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,character,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,long,HIVE-IMPALA,bigint,,,N
+ORACLE,long raw,HIVE-IMPALA,long raw --Not Found,,,N
+ORACLE,nchar,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,nvarchar2,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,raw,HIVE-IMPALA,raw --Not Found,,,N
+ORACLE,rowid,HIVE-IMPALA,rowid --Not Found,,,N
+ORACLE,string,HIVE-IMPALA,string,,,N
+ORACLE,urowid,HIVE-IMPALA,urowid --Not Found,,,N
+ORACLE,varchar,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,varchar2,HIVE-IMPALA,varchar,65535,,Y
+ORACLE,boolean,HIVE-IMPALA,boolean,,,N
+ORACLE,record,HIVE-IMPALA,record --Not Found,,,N
+ORACLE,table,HIVE-IMPALA,table --Not Found,,,N
+ORACLE,varray,HIVE-IMPALA,varray --Not Found,,,N
+ORACLE,ref cursor,HIVE-IMPALA,ref cursor --Not Found,,,N
+ORACLE,ref object_type,HIVE-IMPALA,ref object_type --Not Found,,,N
+ORACLE,bfile,HIVE-IMPALA,bfile --Not Found,,,N
+ORACLE,blob,HIVE-IMPALA,blob,,,N
+ORACLE,clob,HIVE-IMPALA,string,,,N
+ORACLE,nclob,HIVE-IMPALA,nclob --Not Found,,,N
+ORACLE,date,HIVE,date,,,N
+ORACLE,date,IMPALA,timestamp,,,N
+ORACLE,interval day to second,HIVE-IMPALA,interval day to second --Not Found,,,N
+ORACLE,interval year to month,HIVE-IMPALA,interval year to month --Not Found,,,N
+ORACLE,timestamp,HIVE-IMPALA,timestamp,,,N
+ORACLE,timestamp with local timezone,HIVE-IMPALA,timestamp with local timezone --Not Found,,,N
+ORACLE,timestamp with timezone,HIVE-IMPALA,timestamp with timezone --Not Found,,,N
+MYSQL,binary_integer,HIVE-IMPALA,int,,,N
+MYSQL,dec,HIVE-IMPALA,decimal,38,18,Y
+MYSQL,decimal,HIVE-IMPALA,decimal,38,18,Y
+MYSQL,double precision,HIVE-IMPALA,double precision --Not Found,,,N
+MYSQL,float,HIVE-IMPALA,float,,,N
+MYSQL,int,HIVE-IMPALA,int,,,N
+MYSQL,integer,HIVE-IMPALA,int,,,N
+MYSQL,natural,HIVE-IMPALA,natural --Not Found,,,N
+MYSQL,naturaln,HIVE-IMPALA,naturaln --Not Found,,,N
+MYSQL,int,HIVE-IMPALA,int,,,N
+MYSQL,number,HIVE-IMPALA,decimal,38,18,Y
+MYSQL,numeric,HIVE-IMPALA,int,,,N
+MYSQL,pls_integer,HIVE-IMPALA,int,,,N
+MYSQL,positive,HIVE-IMPALA,positive --Not Found,,,N
+MYSQL,positiven,HIVE-IMPALA,positiven --Not Found,,,N
+MYSQL,real,HIVE,float,,,N
+MYSQL,real,IMPALA,real,,,N
+MYSQL,signtype,HIVE-IMPALA,signtype --Not Found,,,N
+MYSQL,smallint,HIVE-IMPALA,smallint,,,N
+MYSQL,char,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,character,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,long,HIVE-IMPALA,bigint,,,N
+MYSQL,long raw,HIVE-IMPALA,long raw --Not Found,,,N
+MYSQL,nchar,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,nvarchar2,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,raw,HIVE-IMPALA,raw --Not Found,,,N
+MYSQL,rowid,HIVE-IMPALA,rowid --Not Found,,,N
+MYSQL,string,HIVE-IMPALA,string,,,N
+MYSQL,urowid,HIVE-IMPALA,urowid --Not Found,,,N
+MYSQL,varchar,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,varchar2,HIVE-IMPALA,varchar,65535,,Y
+MYSQL,boolean,HIVE-IMPALA,boolean,,,N
+MYSQL,record,HIVE-IMPALA,record --Not Found,,,N
+MYSQL,table,HIVE-IMPALA,table --Not Found,,,N
+MYSQL,varray,HIVE-IMPALA,varray --Not Found,,,N
+MYSQL,ref cursor,HIVE-IMPALA,ref cursor --Not Found,,,N
+MYSQL,ref object_type,HIVE-IMPALA,ref object_type --Not Found,,,N
+MYSQL,bfile,HIVE-IMPALA,bfile --Not Found,,,N
+MYSQL,blob,HIVE-IMPALA,blob,,,N
+MYSQL,clob,HIVE-IMPALA,clob,,,N
+MYSQL,nclob,HIVE-IMPALA,nclob --Not Found,,,N
+MYSQL,date,HIVE,date,,,N
+MYSQL,date,IMPALA,timestamp,,,N
+MYSQL,interval day to second,HIVE-IMPALA,interval day to second --Not Found,,,N
+MYSQL,interval year to month,HIVE-IMPALA,interval year to month --Not Found,,,N
+MYSQL,timestamp,HIVE-IMPALA,timestamp,,,N
+MYSQL,timestamp with local timezone,HIVE-IMPALA,timestamp with local timezone --Not Found,,,N
+MYSQL,timestamp with timezone,HIVE-IMPALA,timestamp with timezone --Not Found,,,N
+MYSQL,longblob,HIVE-IMPALA,blob,,,N
+MYSQL,mediumtext,HIVE-IMPALA,string,,,N
+MYSQL,datetime,HIVE-IMPALA,timestamp,,,N
+MYSQL,bit,HIVE-IMPALA,int,,,N
+MYSQL,double,HIVE-IMPALA,decimal,38,18,Y
+MYSQL,bigint,HIVE-IMPALA,bigint,,,N
+ERWIN,binary_integer,HIVE-IMPALA,int,,,N
+ERWIN,dec,HIVE-IMPALA,decimal,38,18,Y
+ERWIN,decimal,HIVE-IMPALA,decimal,38,18,Y
+ERWIN,double precision,HIVE-IMPALA,double precision --Not Found,,,N
+ERWIN,float,HIVE-IMPALA,float,,,N
+ERWIN,int,HIVE-IMPALA,int,,,N
+ERWIN,integer,HIVE-IMPALA,int,,,N
+ERWIN,natural,HIVE-IMPALA,natural --Not Found,,,N
+ERWIN,naturaln,HIVE-IMPALA,naturaln --Not Found,,,N
+ERWIN,int,HIVE-IMPALA,int,,,N
+ERWIN,number,HIVE-IMPALA,decimal,38,18,Y
+ERWIN,numeric,HIVE-IMPALA,int,,,N
+ERWIN,pls_integer,HIVE-IMPALA,int,,,N
+ERWIN,positive,HIVE-IMPALA,positive --Not Found,,,N
+ERWIN,positiven,HIVE-IMPALA,positiven --Not Found,,,N
+ERWIN,real,HIVE,float,,,N
+ERWIN,real,IMPALA,real,,,N
+ERWIN,signtype,HIVE-IMPALA,signtype --Not Found,,,N
+ERWIN,smallint,HIVE-IMPALA,smallint,,,N
+ERWIN,char,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,character,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,long,HIVE-IMPALA,bigint,,,N
+ERWIN,long raw,HIVE-IMPALA,long raw --Not Found,,,N
+ERWIN,nchar,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,nvarchar2,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,raw,HIVE-IMPALA,raw --Not Found,,,N
+ERWIN,rowid,HIVE-IMPALA,rowid --Not Found,,,N
+ERWIN,string,HIVE-IMPALA,string,,,N
+ERWIN,urowid,HIVE-IMPALA,urowid --Not Found,,,N
+ERWIN,varchar,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,varchar2,HIVE-IMPALA,varchar,65535,,Y
+ERWIN,boolean,HIVE-IMPALA,boolean,,,N
+ERWIN,record,HIVE-IMPALA,record --Not Found,,,N
+ERWIN,table,HIVE-IMPALA,table --Not Found,,,N
+ERWIN,varray,HIVE-IMPALA,varray --Not Found,,,N
+ERWIN,ref cursor,HIVE-IMPALA,ref cursor --Not Found,,,N
+ERWIN,ref object_type,HIVE-IMPALA,ref object_type --Not Found,,,N
+ERWIN,bfile,HIVE-IMPALA,bfile --Not Found,,,N
+ERWIN,blob,HIVE-IMPALA,blob,,,N
+ERWIN,clob,HIVE-IMPALA,clob,,,N
+ERWIN,nclob,HIVE-IMPALA,nclob --Not Found,,,N
+ERWIN,date,HIVE,date,,,N
+ERWIN,date,IMPALA,timestamp,,,N
+ERWIN,interval day to second,HIVE-IMPALA,interval day to second --Not Found,,,N
+ERWIN,interval year to month,HIVE-IMPALA,interval year to month --Not Found,,,N
+ERWIN,timestamp,HIVE-IMPALA,timestamp,,,N
+ERWIN,timestamp with local timezone,HIVE-IMPALA,timestamp with local timezone --Not Found,,,N
+ERWIN,timestamp with timezone,HIVE-IMPALA,timestamp with timezone --Not Found,,,N
+ERWIN,longblob,HIVE-IMPALA,blob,,,N
+ERWIN,mediumtext,HIVE-IMPALA,string,,,N
+ERWIN,datetime,HIVE-IMPALA,timestamp,,,N
+ERWIN,bit,HIVE-IMPALA,int,,,N
+ERWIN,double,HIVE-IMPALA,decimal,38,18,Y
+ERWIN,bigint,HIVE-IMPALA,bigint,,,N
+ERWIN,text,HIVE-IMPALA,string,,,N
